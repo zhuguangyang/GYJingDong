@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WebRoot</key>
+	<string>https://oauth.jd.com/oauth/token</string>
+	<key>Path</key>
+	<dict>
+		<key>FirstPath</key>
+		<string>v2/util/banner</string>
+	</dict>
+	<key>Params</key>
+	<dict>
+		<key>f</key>
+		<string>iphone</string>
+		<key>type</key>
+		<string>youhui</string>
+		<key>v</key>
+		<string>6.3.2</string>
+		<key>weixin</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

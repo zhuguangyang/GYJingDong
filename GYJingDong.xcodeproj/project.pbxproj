@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */; };
+		B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF601D1129C10039F935 /* GYNetWorking.swift */; };
+		B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */; };
+		B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */; };
+		B75FCF671D1130010039F935 /* GlobaVivale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF661D1130010039F935 /* GlobaVivale.swift */; };
+		B75FCF691D1130710039F935 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF681D1130710039F935 /* UserAccount.swift */; };
+		B75FCF711D1144160039F935 /* GYTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF701D1144160039F935 /* GYTabBarViewController.swift */; };
+		B75FCF791D1146930039F935 /* GYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF781D1146930039F935 /* GYBaseViewController.swift */; };
+		B75FCF7B1D11492E0039F935 /* ValueBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF7A1D11492E0039F935 /* ValueBuyVC.swift */; };
+		B75FCF7D1D1149430039F935 /* FoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF7C1D1149430039F935 /* FoundVC.swift */; };
+		B75FCF7F1D11496D0039F935 /* GoodThingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF7E1D11496D0039F935 /* GoodThingVC.swift */; };
+		B75FCF811D11497E0039F935 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF801D11497E0039F935 /* MeVC.swift */; };
 		B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */; };
 		B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B71D0FA81B00F0A2ED /* ViewController.swift */; };
 		B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796D9B91D0FA81B00F0A2ED /* Main.storyboard */; };
@@ -34,6 +46,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYJingDong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.release.xcconfig"; sourceTree = "<group>"; };
+		9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.debug.xcconfig"; sourceTree = "<group>"; };
+		B75FCF601D1129C10039F935 /* GYNetWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GYNetWorking.swift; path = ../GYNetWorking.swift; sourceTree = "<group>"; };
+		B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NetWorkPlist.plist; path = ../NetWorkPlist.plist; sourceTree = "<group>"; };
+		B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthVCViewController.swift; sourceTree = "<group>"; };
+		B75FCF661D1130010039F935 /* GlobaVivale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobaVivale.swift; sourceTree = "<group>"; };
+		B75FCF681D1130710039F935 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		B75FCF6B1D1142DE0039F935 /* GYJingDong-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GYJingDong-Bridging-Header.h"; sourceTree = "<group>"; };
+		B75FCF701D1144160039F935 /* GYTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYTabBarViewController.swift; sourceTree = "<group>"; };
+		B75FCF781D1146930039F935 /* GYBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBaseViewController.swift; sourceTree = "<group>"; };
+		B75FCF7A1D11492E0039F935 /* ValueBuyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueBuyVC.swift; sourceTree = "<group>"; };
+		B75FCF7C1D1149430039F935 /* FoundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundVC.swift; sourceTree = "<group>"; };
+		B75FCF7E1D11496D0039F935 /* GoodThingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodThingVC.swift; sourceTree = "<group>"; };
+		B75FCF801D11497E0039F935 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		B796D9B21D0FA81B00F0A2ED /* GYJingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYJingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B796D9B71D0FA81B00F0A2ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +102,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4091FE06FD13AB8285204070 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A93241A9B4B1EB6D3DF7B7CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */,
+				094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B75FCF581D1128740039F935 /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */,
+				B75FCF681D1130710039F935 /* UserAccount.swift */,
+				B75FCF6B1D1142DE0039F935 /* GYJingDong-Bridging-Header.h */,
+			);
+			path = "OAuth(授权)";
+			sourceTree = "<group>";
+		};
+		B75FCF5A1D1128E40039F935 /* Tool(工具类) */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF6F1D1143F70039F935 /* Main */,
+				B75FCF661D1130010039F935 /* GlobaVivale.swift */,
+			);
+			path = "Tool(工具类)";
+			sourceTree = "<group>";
+		};
+		B75FCF6A1D113FC10039F935 /* NetWorkManager */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF601D1129C10039F935 /* GYNetWorking.swift */,
+				B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */,
+			);
+			path = NetWorkManager;
+			sourceTree = "<group>";
+		};
+		B75FCF6F1D1143F70039F935 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF701D1144160039F935 /* GYTabBarViewController.swift */,
+				B75FCF781D1146930039F935 /* GYBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B75FCF721D1144930039F935 /* ValueBuy */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF7A1D11492E0039F935 /* ValueBuyVC.swift */,
+			);
+			path = ValueBuy;
+			sourceTree = "<group>";
+		};
+		B75FCF731D1144A20039F935 /* Found */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF7C1D1149430039F935 /* FoundVC.swift */,
+			);
+			path = Found;
+			sourceTree = "<group>";
+		};
+		B75FCF741D1144DA0039F935 /* GoodThing */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF7E1D11496D0039F935 /* GoodThingVC.swift */,
+			);
+			path = GoodThing;
+			sourceTree = "<group>";
+		};
+		B75FCF751D1144ED0039F935 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				B75FCF801D11497E0039F935 /* MeVC.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		B796D9A91D0FA81B00F0A2ED = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +195,8 @@
 				B796D9C91D0FA81B00F0A2ED /* GYJingDongTests */,
 				B796D9D41D0FA81B00F0A2ED /* GYJingDongUITests */,
 				B796D9B31D0FA81B00F0A2ED /* Products */,
+				A93241A9B4B1EB6D3DF7B7CE /* Pods */,
+				4091FE06FD13AB8285204070 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +213,13 @@
 		B796D9B41D0FA81B00F0A2ED /* GYJingDong */ = {
 			isa = PBXGroup;
 			children = (
+				B75FCF721D1144930039F935 /* ValueBuy */,
+				B75FCF731D1144A20039F935 /* Found */,
+				B75FCF741D1144DA0039F935 /* GoodThing */,
+				B75FCF751D1144ED0039F935 /* Me */,
+				B75FCF6A1D113FC10039F935 /* NetWorkManager */,
+				B75FCF5A1D1128E40039F935 /* Tool(工具类) */,
+				B75FCF581D1128740039F935 /* OAuth(授权) */,
 				B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */,
 				B796D9B71D0FA81B00F0A2ED /* ViewController.swift */,
 				B796D9B91D0FA81B00F0A2ED /* Main.storyboard */,
@@ -132,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B796D9DA1D0FA81B00F0A2ED /* Build configuration list for PBXNativeTarget "GYJingDong" */;
 			buildPhases = (
+				3948985A14C3839322B3CFB4 /* Check Pods Manifest.lock */,
 				B796D9AE1D0FA81B00F0A2ED /* Sources */,
 				B796D9AF1D0FA81B00F0A2ED /* Frameworks */,
 				B796D9B01D0FA81B00F0A2ED /* Resources */,
+				F2EFF6300BE7AD8EC36C04E6 /* Embed Pods Frameworks */,
+				E8D366E363A9B4DB54B4E068 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +319,7 @@
 				TargetAttributes = {
 					B796D9B11D0FA81B00F0A2ED = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UZZG6NM74T;
 					};
 					B796D9C51D0FA81B00F0A2ED = {
 						CreatedOnToolsVersion = 7.3;
@@ -231,6 +358,7 @@
 			files = (
 				B796D9C01D0FA81B00F0A2ED /* LaunchScreen.storyboard in Resources */,
 				B796D9BD1D0FA81B00F0A2ED /* Assets.xcassets in Resources */,
+				B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */,
 				B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,13 +379,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3948985A14C3839322B3CFB4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D366E363A9B4DB54B4E068 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2EFF6300BE7AD8EC36C04E6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B796D9AE1D0FA81B00F0A2ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75FCF711D1144160039F935 /* GYTabBarViewController.swift in Sources */,
 				B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */,
+				B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */,
+				B75FCF691D1130710039F935 /* UserAccount.swift in Sources */,
+				B75FCF811D11497E0039F935 /* MeVC.swift in Sources */,
+				B75FCF7B1D11492E0039F935 /* ValueBuyVC.swift in Sources */,
+				B75FCF7D1D1149430039F935 /* FoundVC.swift in Sources */,
+				B75FCF671D1130010039F935 /* GlobaVivale.swift in Sources */,
 				B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */,
+				B75FCF7F1D11496D0039F935 /* GoodThingVC.swift in Sources */,
+				B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */,
+				B75FCF791D1146930039F935 /* GYBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -388,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -397,23 +583,36 @@
 		};
 		B796D9DB1D0FA81B00F0A2ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GYJingDong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GYJingDong/OAuth(授权)/GYJingDong-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B796D9DC1D0FA81B00F0A2ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GYJingDong/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GYJingDong/OAuth(授权)/GYJingDong-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +681,7 @@
 				B796D9DC1D0FA81B00F0A2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B796D9DD1D0FA81B00F0A2ED /* Build configuration list for PBXNativeTarget "GYJingDongTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +690,7 @@
 				B796D9DF1D0FA81B00F0A2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B796D9E01D0FA81B00F0A2ED /* Build configuration list for PBXNativeTarget "GYJingDongUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +699,7 @@
 				B796D9E21D0FA81B00F0A2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
