@@ -69,10 +69,13 @@ class GYTabBarViewController: UITabBarController {
     func giveMeNavWithVc(vc: UIViewController,imageName: String,selectImagename: String) -> UINavigationController{
         
         let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.translucent = true
+        nav.navigationBar.backgroundColor = UIColor.redColor()
+        //这个值需要自己在设置
         //设置背景颜色
         nav.navigationBar.setBackgroundImage(UIImage(named:"navi_zhi"), forBarMetrics: UIBarMetrics.Default)
         //UIImage(named: "Bg_user_float"),
-        nav.navigationBar.setBackgroundImage(removeRendering("Bg_user_float"), forBarMetrics: UIBarMetrics.Default)
+        //        nav.navigationBar.setBackgroundImage(removeRendering("Bg_user_float"), forBarMetrics: UIBarMetrics.Default)
         //        let image = removeRendering("taBg_user")
         
         
