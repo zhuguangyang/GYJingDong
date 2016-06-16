@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */; };
+		B705ED2E1D12664B0044DE64 /* FoundHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED2D1D12664B0044DE64 /* FoundHeadView.swift */; };
+		B705ED321D1273330044DE64 /* ChildHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED311D1273330044DE64 /* ChildHeadView.swift */; };
+		B705ED351D127F040044DE64 /* GYBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED341D127F040044DE64 /* GYBanner.swift */; };
+		B705ED371D1282860044DE64 /* GYBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED361D1282860044DE64 /* GYBannerModel.swift */; };
+		B705ED391D12A7A30044DE64 /* FoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED381D12A7A30044DE64 /* FoundCell.swift */; };
+		B705ED3B1D12A7CD0044DE64 /* FoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */; };
 		B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF601D1129C10039F935 /* GYNetWorking.swift */; };
 		B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */; };
 		B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */; };
@@ -49,6 +55,12 @@
 		01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYJingDong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.release.xcconfig"; sourceTree = "<group>"; };
 		9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.debug.xcconfig"; sourceTree = "<group>"; };
+		B705ED2D1D12664B0044DE64 /* FoundHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundHeadView.swift; sourceTree = "<group>"; };
+		B705ED311D1273330044DE64 /* ChildHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildHeadView.swift; sourceTree = "<group>"; };
+		B705ED341D127F040044DE64 /* GYBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBanner.swift; sourceTree = "<group>"; };
+		B705ED361D1282860044DE64 /* GYBannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBannerModel.swift; sourceTree = "<group>"; };
+		B705ED381D12A7A30044DE64 /* FoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundCell.swift; sourceTree = "<group>"; };
+		B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundCell.xib; sourceTree = "<group>"; };
 		B75FCF601D1129C10039F935 /* GYNetWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GYNetWorking.swift; path = ../GYNetWorking.swift; sourceTree = "<group>"; };
 		B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NetWorkPlist.plist; path = ../NetWorkPlist.plist; sourceTree = "<group>"; };
 		B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthVCViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +131,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B705ED291D12661E0044DE64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B705ED2D1D12664B0044DE64 /* FoundHeadView.swift */,
+				B705ED311D1273330044DE64 /* ChildHeadView.swift */,
+				B705ED381D12A7A30044DE64 /* FoundCell.swift */,
+				B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B705ED2F1D1272E40044DE64 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		B705ED301D1272EC0044DE64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B705ED361D1282860044DE64 /* GYBannerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B705ED331D127EFA0044DE64 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				B705ED341D127F040044DE64 /* GYBanner.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		B75FCF581D1128740039F935 /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +178,7 @@
 		B75FCF5A1D1128E40039F935 /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				B705ED331D127EFA0044DE64 /* Lib */,
 				B75FCF6F1D1143F70039F935 /* Main */,
 				B75FCF661D1130010039F935 /* GlobaVivale.swift */,
 			);
@@ -167,6 +214,9 @@
 		B75FCF731D1144A20039F935 /* Found */ = {
 			isa = PBXGroup;
 			children = (
+				B705ED301D1272EC0044DE64 /* Model */,
+				B705ED2F1D1272E40044DE64 /* ModelView */,
+				B705ED291D12661E0044DE64 /* View */,
 				B75FCF7C1D1149430039F935 /* FoundVC.swift */,
 			);
 			path = Found;
@@ -356,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B705ED3B1D12A7CD0044DE64 /* FoundCell.xib in Resources */,
 				B796D9C01D0FA81B00F0A2ED /* LaunchScreen.storyboard in Resources */,
 				B796D9BD1D0FA81B00F0A2ED /* Assets.xcassets in Resources */,
 				B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */,
@@ -433,13 +484,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75FCF711D1144160039F935 /* GYTabBarViewController.swift in Sources */,
+				B705ED2E1D12664B0044DE64 /* FoundHeadView.swift in Sources */,
 				B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */,
 				B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */,
 				B75FCF691D1130710039F935 /* UserAccount.swift in Sources */,
+				B705ED371D1282860044DE64 /* GYBannerModel.swift in Sources */,
+				B705ED351D127F040044DE64 /* GYBanner.swift in Sources */,
 				B75FCF811D11497E0039F935 /* MeVC.swift in Sources */,
+				B705ED391D12A7A30044DE64 /* FoundCell.swift in Sources */,
 				B75FCF7B1D11492E0039F935 /* ValueBuyVC.swift in Sources */,
 				B75FCF7D1D1149430039F935 /* FoundVC.swift in Sources */,
 				B75FCF671D1130010039F935 /* GlobaVivale.swift in Sources */,
+				B705ED321D1273330044DE64 /* ChildHeadView.swift in Sources */,
 				B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */,
 				B75FCF7F1D11496D0039F935 /* GoodThingVC.swift in Sources */,
 				B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */,

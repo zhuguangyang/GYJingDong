@@ -3,4 +3,6 @@ target 'GYJingDong' do
     use_frameworks!
     pod "Alamofire"
     pod "SDWebImage"
+    pod "SnapKit"
+    pod "SwiftyJSON"
 end

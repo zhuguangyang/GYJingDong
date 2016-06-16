@@ -3,11 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>WebRoot</key>
-	<string>https://oauth.jd.com/oauth/token</string>
+	<string>http://api.smzdm.com</string>
 	<key>Path</key>
 	<dict>
-		<key>FirstPath</key>
-		<string>v2/util/banner</string>
+		<key>FaXian</key>
+		<string>/v1/faxian/articles</string>
+		<key>V2Banner</key>
+		<string>/v2/util/banner</string>
 	</dict>
 	<key>Params</key>
 	<dict>

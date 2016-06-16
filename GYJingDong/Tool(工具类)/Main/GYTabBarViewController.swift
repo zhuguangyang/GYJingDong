@@ -17,7 +17,7 @@ class GYTabBarViewController: UITabBarController {
         let goodThing = giveMeVC("GoodThingVC", vcTitle: "好物", vcItemTitle: "不容错过")
         let me = giveMeVC("MeVC", vcTitle: "靓妹", vcItemTitle: "")
         
-        viewControllers = [giveMeNavWithVc(value, imageName: "mainNormal", selectImagename: "mainSeleted"),giveMeNavWithVc(found, imageName: "dingyueItem", selectImagename: "dingyueItemSelected"),giveMeNavWithVc(goodThing, imageName: "dingyueItem", selectImagename: "dingyueItemSelected"),giveMeNavWithVc(me, imageName: "personNormal", selectImagename: "personSeleted")]
+        viewControllers = [giveMeNavWithVc(value, imageName: "mainNormal", selectImagename: "mainSeleted"),giveMeNavWithVc(found, imageName: "goodsNormal", selectImagename: "goodsseleted"),giveMeNavWithVc(goodThing, imageName: "dingyueItem", selectImagename: "dingyueItemSelected"),giveMeNavWithVc(me, imageName: "personNormal", selectImagename: "personSeleted")]
         
         tabBar.tintColor = UIColor.redColor()
     }
@@ -68,21 +68,45 @@ class GYTabBarViewController: UITabBarController {
      */
     func giveMeNavWithVc(vc: UIViewController,imageName: String,selectImagename: String) -> UINavigationController{
         
+        //        if vc .isKindOfClass(MeVC) {}
         let nav = UINavigationController(rootViewController: vc)
-        nav.navigationBar.translucent = true
-        nav.navigationBar.backgroundColor = UIColor.redColor()
+        //        nav.navigationBar.translucent = true
         //这个值需要自己在设置
-        //设置背景颜色
+        //设置背景图片 241 77 74
         nav.navigationBar.setBackgroundImage(UIImage(named:"navi_zhi"), forBarMetrics: UIBarMetrics.Default)
-        //UIImage(named: "Bg_user_float"),
-        //        nav.navigationBar.setBackgroundImage(removeRendering("Bg_user_float"), forBarMetrics: UIBarMetrics.Default)
-        //        let image = removeRendering("taBg_user")
-        
-        
-        nav.navigationBar.barTintColor = UIColor.purpleColor()
+        //根据图层关系设置背景图片也可解决 背景颜色差20高度的问题
+        //        let image = UIImageView(image: UIImage(named: "navi_zhi"))
+        //        image.frame = nav.navigationBar.bounds
+        //        nav.navigationBar.insertSubview(image, atIndex: 1)
+        //        nav.navigationBar.backgroundColor = UIColor(red: 241/255.0, green: 77/255.0, blue: 74/255.0, alpha: 1.0)
+        // 设置背景颜色缺失20  补足背景颜色
+        let statusView = UIView(frame: CGRectMake(0,0,UIScreen.mainScreen().bounds.size.width,20))
+        statusView.backgroundColor = UIColor(red: 241/255.0, green: 90/255.0, blue: 89/255.0, alpha: 1.0)
+        view.addSubview(statusView)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        nav.navigationBar.backgroundColor = UIColor(red: 241/255.0, green: 90/255.0, blue: 89/255.0, alpha: 1.0)
         
         nav.tabBarItem = UITabBarItem.init(title: vc.tabBarItem.title, image: removeRendering(imageName), selectedImage: removeRendering(selectImagename))
         return nav
+        
+    }
+    /**
+     颜色生成图片
+     
+     - parameter color: CGColor
+     
+     - returns: 图片
+     */
+    func createImageWithColor(color:UIColor) -> UIImage {
+        let rect = CGRectMake(0, 0, 1.0, 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
         
     }
     

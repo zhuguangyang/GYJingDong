@@ -12,6 +12,12 @@ class ValueBuyVC: GYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        creatLeftBarBtn("", imageName: "SecondHand_Search", target: self, action: #selector(ValueBuyVC.searchAction))
+        creatRightBarBtn("", imageName: "dingyueSele", target: self, action: #selector(ValueBuyVC.searchAction))
+    }
+    
+    func searchAction() {               
+        print(#function)
     }
     
 }
