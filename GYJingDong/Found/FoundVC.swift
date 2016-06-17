@@ -13,8 +13,14 @@ class FoundVC: GYBaseViewController {
     var collectionView:UICollectionView?
     ///保存轮播图
     var bannerArray:[GYBannerModel] = []
+
     /// 保存btn
     var btnArray: [GYBannerModel] = []
+        {
+        didSet{
+            collectionView?.reloadData()
+        }
+    }
     
     private var shopLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
@@ -49,7 +55,7 @@ class FoundVC: GYBaseViewController {
     
     
     private func instanceUI() {
-        collectionView = UICollectionView(frame: CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
+        collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
         shopLayout.minimumLineSpacing = 5
         shopLayout.minimumInteritemSpacing = 5
         shopLayout.itemSize = CGSize(width: (SCREEN_WIDTH - 5 )/2, height:  (SCREEN_WIDTH - 5 )/2)
@@ -64,7 +70,7 @@ class FoundVC: GYBaseViewController {
     
     private func setupUI() {
         let banner = GYBanner()
-        let bannerView = banner.initWithFrame(CGRectMake(0, 64, SCREEN_WIDTH, 180)) { (index) in
+        let bannerView = banner.initWithFrame(CGRectMake(0, 0, SCREEN_WIDTH, 180)) { (index) in
             
         }
         for item in bannerArray {
@@ -99,8 +105,24 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
-        let reusableview = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "", forIndexPath: indexPath)
+        let reusableview = UICollectionReusableView()
         
+        let banner = GYBanner()
+        let bannerView = banner.initWithFrame(CGRectMake(0, 64, SCREEN_WIDTH, 180)) { (index) in
+            
+        }
+        for item in bannerArray {
+            print(item.imageNamed)
+        }
+        banner.reloadGYBanner(bannerArray)
+        //        view.addSubview(bannerView)
+        reusableview.addSubview(bannerView)
+        
+        let headView = ChildHeadView()
+        headView.modelArr = btnArray
+        headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, SCREEN_WIDTH * 2)
+        //        view.addSubview(headView)
+        reusableview.addSubview(headView)
         return reusableview
         
     }
