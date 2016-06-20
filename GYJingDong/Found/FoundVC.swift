@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class FoundVC: GYBaseViewController {
     
@@ -36,11 +37,28 @@ class FoundVC: GYBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         instanceUI()
         //        setupUI()
-        
-        //f=iphone&type=faxian&v=6.3.2&weixin=1
+        weak var weakSelf = self
+        collectionView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            weakSelf?.bannerArray.removeAll()
+            weakSelf?.btnArray.removeAll()
+            weakSelf?.productArray.removeAll()
+            weakSelf?.pageCount = 1
+            weakSelf?.offsetCount = 0
+            weakSelf?.getDatas()
+        })
+        collectionView?.mj_header.beginRefreshing()
+        collectionView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { 
+            weakSelf?.pageCount = (weakSelf?.pageCount)! + 1
+            weakSelf?.offsetCount += 20
+            weakSelf?.getFootDatas()
+        })
+    }
+    /**
+     获取下拉刷新的数据
+     */
+    private func getDatas() {
         weak var weakSelf = self
         GYNetWorking.defaultManager?.GET("V2Banner", paramas: ["f":"iphone","type":"faxian","v":"6.3.2","weixin":1], sucess: { (obj) in
             
@@ -56,6 +74,7 @@ class FoundVC: GYBaseViewController {
                 model.labelText = (item["title"] ?? "") as! String
                 weakSelf?.btnArray.append(model)
             }
+            weakSelf?.collectionView?.mj_header.endRefreshing()
             }, failure: { (error) in
                 print(error)
         })
@@ -68,13 +87,34 @@ class FoundVC: GYBaseViewController {
                 model.imageNamed = item["article_pic"]! as? String ?? ""
                 weakSelf?.productArray.append(model)
             }
+            weakSelf?.collectionView?.mj_header.endRefreshing()
             }, failure: { (error) in
                 print(error)
         })
         
     }
     
-    
+    private func getFootDatas() {
+        weak var weakSelf = self
+        if pageCount == 3 {
+            weakSelf?.collectionView?.mj_footer.resetNoMoreData()
+            return
+        }
+        GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
+            print(obj)
+            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
+            for item in bannerA!{
+                let model = GYBannerModel()
+                model.imageNamed = item["article_pic"]! as? String ?? ""
+                weakSelf?.productArray.append(model)
+            }
+            weakSelf?.collectionView?.reloadData()
+            weakSelf?.collectionView?.mj_footer.endRefreshing()
+            }, failure: { (error) in
+                print(error)
+        })
+        
+    }
     
     private func instanceUI() {
         collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
@@ -106,6 +146,7 @@ class FoundVC: GYBaseViewController {
         collectionView?.addSubview(headView)
     }
     
+    //MARK: - 懒加载
 }
 
 extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {

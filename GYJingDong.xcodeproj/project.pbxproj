@@ -32,6 +32,7 @@
 		B796D9C01D0FA81B00F0A2ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796D9BE1D0FA81B00F0A2ED /* LaunchScreen.storyboard */; };
 		B796D9CB1D0FA81B00F0A2ED /* GYJingDongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9CA1D0FA81B00F0A2ED /* GYJingDongTests.swift */; };
 		B796D9D61D0FA81B00F0A2ED /* GYJingDongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9D51D0FA81B00F0A2ED /* GYJingDongUITests.swift */; };
+		B797CAA21D179F2900491C11 /* MJ.gif in Resources */ = {isa = PBXBuildFile; fileRef = B797CAA11D179F2900491C11 /* MJ.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		B796D9D11D0FA81B00F0A2ED /* GYJingDongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GYJingDongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796D9D51D0FA81B00F0A2ED /* GYJingDongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYJingDongUITests.swift; sourceTree = "<group>"; };
 		B796D9D71D0FA81B00F0A2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B797CAA11D179F2900491C11 /* MJ.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MJ.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		B75FCF581D1128740039F935 /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
+				B797CAA11D179F2900491C11 /* MJ.gif */,
 				B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */,
 				B75FCF681D1130710039F935 /* UserAccount.swift */,
 				B75FCF6B1D1142DE0039F935 /* GYJingDong-Bridging-Header.h */,
@@ -409,6 +412,7 @@
 				B705ED3B1D12A7CD0044DE64 /* FoundCell.xib in Resources */,
 				B796D9C01D0FA81B00F0A2ED /* LaunchScreen.storyboard in Resources */,
 				B796D9BD1D0FA81B00F0A2ED /* Assets.xcassets in Resources */,
+				B797CAA21D179F2900491C11 /* MJ.gif in Resources */,
 				B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */,
 				B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */,
 			);
