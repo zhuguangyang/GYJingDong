@@ -162,20 +162,20 @@ class GYBanner: UIView {
             if i == 0 {
                 var model = GYBannerModel()
                 model = _models.last!
-                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_600x200"))
+                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
                 _leftView = imageV
             } else if i == 1 {
                 
                 //中间图片  (第一张)
                 var model = GYBannerModel()
                 model = _models.first!
-                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_600x200"))
+                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
                 _centerView = imageV
             } else {
                 //右边的图片 (第二张)
                 var model = GYBannerModel()
                 model = _models[0]
-                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_600x200"))
+                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
                 _rightView = imageV
             }
             
@@ -224,13 +224,13 @@ class GYBanner: UIView {
         //重新设置图片
         var model = GYBannerModel()
         model = _models[leftIndex]
-        _leftView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_600x200"))
+        _leftView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
         
         model = _models[_currIndex]
-        _centerView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_600x200"))
+        _centerView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
         
         model = _models[rightIndex]
-        _rightView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_600x200"))
+        _rightView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
     }
     
     func positionView(){

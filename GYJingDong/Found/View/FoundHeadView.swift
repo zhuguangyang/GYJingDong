@@ -18,9 +18,6 @@ class FoundHeadView: UIView{
     
     private func setupUI() {
         
-        
-        //        addSubview(ChildHeadView)
-        
     }
     
     

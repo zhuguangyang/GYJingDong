@@ -57,7 +57,9 @@ class ChildHeadView: UICollectionView {
             contentView.addSubview(iconImageView)
             contentView.addSubview(iconLabel)
             iconLabel.textAlignment = .Center
-            iconLabel.sizeToFit()
+            //            iconLabel.font = UIFont.systemFontOfSize(15)
+            //            iconLabel.sizeToFit()
+            iconLabel.adjustsFontSizeToFitWidth = true
             //2.布局子空间
             iconImageView.snp_makeConstraints { (make) in
                 make.top.equalTo(contentView).offset(8)
@@ -98,15 +100,14 @@ class ChildHeadView: UICollectionView {
 extension ChildHeadView: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 8
+        return modelArr.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ChileHeadViewCell", forIndexPath: indexPath) as! ChileHeadViewCell
         let model = modelArr[indexPath.row]
-        cell.iconImageView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "search_d"))
+        cell.iconImageView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_faxian_bannerButton"))
         cell.iconLabel.text = model.labelText
         return cell
         

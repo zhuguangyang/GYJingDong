@@ -13,7 +13,17 @@ class FoundVC: GYBaseViewController {
     var collectionView:UICollectionView?
     ///保存轮播图
     var bannerArray:[GYBannerModel] = []
-
+    var heightHeadView:CGFloat?
+    
+    /// 页数
+    var pageCount:Int = 1
+    var offsetCount: Int = 0
+    var productArray:[GYBannerModel] = []
+        {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
     /// 保存btn
     var btnArray: [GYBannerModel] = []
         {
@@ -33,7 +43,7 @@ class FoundVC: GYBaseViewController {
         //f=iphone&type=faxian&v=6.3.2&weixin=1
         weak var weakSelf = self
         GYNetWorking.defaultManager?.GET("V2Banner", paramas: ["f":"iphone","type":"faxian","v":"6.3.2","weixin":1], sucess: { (obj) in
-            print(obj["data"]!!["rows"]!)
+            
             let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
             for item in bannerA!{
                 let model = GYBannerModel()
@@ -46,7 +56,18 @@ class FoundVC: GYBaseViewController {
                 model.labelText = (item["title"] ?? "") as! String
                 weakSelf?.btnArray.append(model)
             }
-            weakSelf?.setupUI()
+            }, failure: { (error) in
+                print(error)
+        })
+        //http://api.smzdm.com/v1/faxian/articles?f=iphone&imgmode=0&limit=20&offset=0&page=1&v=6.3.2&weixin=1
+        GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
+            print(obj)
+            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
+            for item in bannerA!{
+                let model = GYBannerModel()
+                model.imageNamed = item["article_pic"]! as? String ?? ""
+                weakSelf?.productArray.append(model)
+            }
             }, failure: { (error) in
                 print(error)
         })
@@ -54,11 +75,13 @@ class FoundVC: GYBaseViewController {
     }
     
     
+    
     private func instanceUI() {
         collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
         shopLayout.minimumLineSpacing = 5
         shopLayout.minimumInteritemSpacing = 5
         shopLayout.itemSize = CGSize(width: (SCREEN_WIDTH - 5 )/2, height:  (SCREEN_WIDTH - 5 )/2)
+        //        shopLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 300)
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
@@ -66,6 +89,7 @@ class FoundVC: GYBaseViewController {
         view.addSubview(collectionView!)
         
         collectionView?.registerNib(UINib(nibName: "FoundCell",bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "FoundCell")
+        collectionView?.registerClass(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeadView")
     }
     
     private func setupUI() {
@@ -73,58 +97,59 @@ class FoundVC: GYBaseViewController {
         let bannerView = banner.initWithFrame(CGRectMake(0, 0, SCREEN_WIDTH, 180)) { (index) in
             
         }
-        for item in bannerArray {
-            print(item.imageNamed)
-        }
         banner.reloadGYBanner(bannerArray)
-        //        view.addSubview(bannerView)
         collectionView?.addSubview(bannerView)
         
         let headView = ChildHeadView()
         headView.modelArr = btnArray
-        headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, SCREEN_WIDTH * 2)
-        //        view.addSubview(headView)
+        headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, (SCREEN_WIDTH/4) * 2)
         collectionView?.addSubview(headView)
     }
     
 }
 
-extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource {
+extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 10
+        return productArray.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FoundCell", forIndexPath: indexPath) as! FoundCell
-        cell.backgroundColor = UIColor.redColor()
+        let model  = productArray[indexPath.row]
+        
+        cell.iconImage.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_CommentDetai_Big"))
         return cell
         
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
-        let reusableview = UICollectionReusableView()
-        
-        let banner = GYBanner()
-        let bannerView = banner.initWithFrame(CGRectMake(0, 64, SCREEN_WIDTH, 180)) { (index) in
+        var reusableview = UICollectionReusableView()
+        if kind == UICollectionElementKindSectionHeader {
+            reusableview = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HeadView", forIndexPath: indexPath)
+            let banner = GYBanner()
+            let bannerView = banner.initWithFrame(CGRectMake(0, 0, SCREEN_WIDTH, 180)) { (index) in
+                
+            }
+            banner.reloadGYBanner(bannerArray)
+            reusableview.addSubview(bannerView)
             
+            let headView = ChildHeadView()
+            headView.modelArr = btnArray
+            headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, (SCREEN_WIDTH/4) * 2)
+            reusableview.addSubview(headView)
+            heightHeadView = headView.frame.size.height + 180
         }
-        for item in bannerArray {
-            print(item.imageNamed)
-        }
-        banner.reloadGYBanner(bannerArray)
-        //        view.addSubview(bannerView)
-        reusableview.addSubview(bannerView)
         
-        let headView = ChildHeadView()
-        headView.modelArr = btnArray
-        headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, SCREEN_WIDTH * 2)
-        //        view.addSubview(headView)
-        reusableview.addSubview(headView)
         return reusableview
         
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSizeMake(SCREEN_WIDTH, 373)
+    }
+    
     
 }

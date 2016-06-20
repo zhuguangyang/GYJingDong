@@ -5,4 +5,5 @@ target 'GYJingDong' do
     pod "SDWebImage"
     pod "SnapKit"
     pod "SwiftyJSON"
+    pod "MJRefresh"
 end
