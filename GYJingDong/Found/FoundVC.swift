@@ -16,6 +16,7 @@ class FoundVC: GYBaseViewController {
     var bannerArray:[GYBannerModel] = []
     var heightHeadView:CGFloat?
     
+    
     /// 页数
     var pageCount:Int = 1
     var offsetCount: Int = 0
@@ -96,12 +97,11 @@ class FoundVC: GYBaseViewController {
     
     private func getFootDatas() {
         weak var weakSelf = self
-        if pageCount == 3 {
-            weakSelf?.collectionView?.mj_footer.resetNoMoreData()
+        if pageCount == 300 {
+            weakSelf?.collectionView?.mj_footer.endRefreshingWithNoMoreData()
             return
         }
         GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
-            print(obj)
             let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
             for item in bannerA!{
                 let model = GYBannerModel()
@@ -120,8 +120,8 @@ class FoundVC: GYBaseViewController {
         collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
         shopLayout.minimumLineSpacing = 5
         shopLayout.minimumInteritemSpacing = 5
+        //        shopLayout.footerReferenceSize = CGSizeZero
         shopLayout.itemSize = CGSize(width: (SCREEN_WIDTH - 5 )/2, height:  (SCREEN_WIDTH - 5 )/2)
-        //        shopLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 300)
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
@@ -152,7 +152,7 @@ class FoundVC: GYBaseViewController {
 extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        //        LogOverride.printLog("productArray.count:" + "\(productArray.count)")
         return productArray.count ?? 0
     }
     
@@ -189,6 +189,10 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if heightHeadView != nil {
+            LogOverride.printLog(heightHeadView)
+            return CGSizeMake(SCREEN_WIDTH, heightHeadView!)
+        }
         return CGSizeMake(SCREEN_WIDTH, 373)
     }
     

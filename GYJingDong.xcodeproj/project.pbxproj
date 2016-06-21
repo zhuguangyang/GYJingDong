@@ -25,6 +25,8 @@
 		B75FCF7D1D1149430039F935 /* FoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF7C1D1149430039F935 /* FoundVC.swift */; };
 		B75FCF7F1D11496D0039F935 /* GoodThingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF7E1D11496D0039F935 /* GoodThingVC.swift */; };
 		B75FCF811D11497E0039F935 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF801D11497E0039F935 /* MeVC.swift */; };
+		B76BE0FA1D19092000A4B6E9 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76BE0F91D19092000A4B6E9 /* SQLite.framework */; };
+		B76BE0FC1D190B0000A4B6E9 /* GYSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE0FB1D190B0000A4B6E9 /* GYSQLite.swift */; };
 		B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */; };
 		B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B71D0FA81B00F0A2ED /* ViewController.swift */; };
 		B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796D9B91D0FA81B00F0A2ED /* Main.storyboard */; };
@@ -33,6 +35,9 @@
 		B796D9CB1D0FA81B00F0A2ED /* GYJingDongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9CA1D0FA81B00F0A2ED /* GYJingDongTests.swift */; };
 		B796D9D61D0FA81B00F0A2ED /* GYJingDongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9D51D0FA81B00F0A2ED /* GYJingDongUITests.swift */; };
 		B797CAA21D179F2900491C11 /* MJ.gif in Resources */ = {isa = PBXBuildFile; fileRef = B797CAA11D179F2900491C11 /* MJ.gif */; };
+		B797CAA71D17EC0300491C11 /* FoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797CAA61D17EC0300491C11 /* FoundViewModel.swift */; };
+		B797CAA91D17EE0C00491C11 /* ViewModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797CAA81D17EE0C00491C11 /* ViewModelClass.swift */; };
+		B797CAAC1D17F39C00491C11 /* LogOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797CAAB1D17F39C00491C11 /* LogOverride.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,9 @@
 		B75FCF7C1D1149430039F935 /* FoundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundVC.swift; sourceTree = "<group>"; };
 		B75FCF7E1D11496D0039F935 /* GoodThingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodThingVC.swift; sourceTree = "<group>"; };
 		B75FCF801D11497E0039F935 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
+		B76BE0F71D1907C200A4B6E9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		B76BE0F91D19092000A4B6E9 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GYJingDong-fjvduqwxekslqwereftnvnjytoll/Build/Products/Debug-iphonesimulator/SQLite.framework"; sourceTree = "<group>"; };
+		B76BE0FB1D190B0000A4B6E9 /* GYSQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYSQLite.swift; sourceTree = "<group>"; };
 		B796D9B21D0FA81B00F0A2ED /* GYJingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYJingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B796D9B71D0FA81B00F0A2ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +96,9 @@
 		B796D9D51D0FA81B00F0A2ED /* GYJingDongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYJingDongUITests.swift; sourceTree = "<group>"; };
 		B796D9D71D0FA81B00F0A2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B797CAA11D179F2900491C11 /* MJ.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MJ.gif; sourceTree = "<group>"; };
+		B797CAA61D17EC0300491C11 /* FoundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundViewModel.swift; sourceTree = "<group>"; };
+		B797CAA81D17EE0C00491C11 /* ViewModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelClass.swift; sourceTree = "<group>"; };
+		B797CAAB1D17F39C00491C11 /* LogOverride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOverride.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76BE0FA1D19092000A4B6E9 /* SQLite.framework in Frameworks */,
 				A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +131,8 @@
 		4091FE06FD13AB8285204070 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B76BE0F91D19092000A4B6E9 /* SQLite.framework */,
+				B76BE0F71D1907C200A4B6E9 /* libsqlite3.0.tbd */,
 				01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */,
 			);
 			name = Frameworks;
@@ -147,6 +161,8 @@
 		B705ED2F1D1272E40044DE64 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				B797CAA61D17EC0300491C11 /* FoundViewModel.swift */,
+				B797CAA81D17EE0C00491C11 /* ViewModelClass.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -181,6 +197,8 @@
 		B75FCF5A1D1128E40039F935 /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				B76BE0F61D18ECF400A4B6E9 /* SQLite */,
+				B797CAAA1D17F38F00491C11 /* LogMethod */,
 				B705ED331D127EFA0044DE64 /* Lib */,
 				B75FCF6F1D1143F70039F935 /* Main */,
 				B75FCF661D1130010039F935 /* GlobaVivale.swift */,
@@ -241,6 +259,14 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		B76BE0F61D18ECF400A4B6E9 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				B76BE0FB1D190B0000A4B6E9 /* GYSQLite.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		B796D9A91D0FA81B00F0A2ED = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +325,14 @@
 				B796D9D71D0FA81B00F0A2ED /* Info.plist */,
 			);
 			path = GYJingDongUITests;
+			sourceTree = "<group>";
+		};
+		B797CAAA1D17F38F00491C11 /* LogMethod */ = {
+			isa = PBXGroup;
+			children = (
+				B797CAAB1D17F39C00491C11 /* LogOverride.swift */,
+			);
+			path = LogMethod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75FCF711D1144160039F935 /* GYTabBarViewController.swift in Sources */,
+				B797CAA71D17EC0300491C11 /* FoundViewModel.swift in Sources */,
 				B705ED2E1D12664B0044DE64 /* FoundHeadView.swift in Sources */,
 				B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */,
 				B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */,
@@ -496,12 +531,15 @@
 				B705ED351D127F040044DE64 /* GYBanner.swift in Sources */,
 				B75FCF811D11497E0039F935 /* MeVC.swift in Sources */,
 				B705ED391D12A7A30044DE64 /* FoundCell.swift in Sources */,
+				B797CAAC1D17F39C00491C11 /* LogOverride.swift in Sources */,
 				B75FCF7B1D11492E0039F935 /* ValueBuyVC.swift in Sources */,
 				B75FCF7D1D1149430039F935 /* FoundVC.swift in Sources */,
+				B76BE0FC1D190B0000A4B6E9 /* GYSQLite.swift in Sources */,
 				B75FCF671D1130010039F935 /* GlobaVivale.swift in Sources */,
 				B705ED321D1273330044DE64 /* ChildHeadView.swift in Sources */,
 				B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */,
 				B75FCF7F1D11496D0039F935 /* GoodThingVC.swift in Sources */,
+				B797CAA91D17EE0C00491C11 /* ViewModelClass.swift in Sources */,
 				B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */,
 				B75FCF791D1146930039F935 /* GYBaseViewController.swift in Sources */,
 			);

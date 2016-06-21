@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SQLite.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>20004529EB8EE672ECEDA2940F6790B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>615DD9B067B9851EEE659E054247ADBD</key>
+		<key>2A69C00FA681E58BBC844E1CFFD9B943</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2BA6B777E2AE20020A3253CA24AD0809</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>690E6D63A6B5164EECD2F9E8AF88B8FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E2140FB8452EC06D68BDFF42B7DFE5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>92E92F0B9D60D118204B1146C8760944</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>943F15EC4CF516E4E31E066E9968A610</key>
+		<key>E16C5056E9EEFFF6C878595E22E358F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

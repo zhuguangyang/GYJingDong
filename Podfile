@@ -6,4 +6,5 @@ target 'GYJingDong' do
     pod "SnapKit"
     pod "SwiftyJSON"
     pod "MJRefresh"
+    pod "SQLite.swift", '~> 0.10.1'
 end

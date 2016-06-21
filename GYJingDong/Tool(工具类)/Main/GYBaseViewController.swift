@@ -95,4 +95,5 @@ class GYBaseViewController: UIViewController {
         return (image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal))!
     }
     
+  
 }

@@ -9,11 +9,17 @@
 import UIKit
 
 class ValueBuyVC: GYBaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         creatLeftBarBtn("", imageName: "SecondHand_Search", target: self, action: #selector(ValueBuyVC.searchAction))
         creatRightBarBtn("", imageName: "dingyueSele", target: self, action: #selector(ValueBuyVC.searchAction))
+        GYSQLite.sharedInstance.createSQLite()
+        GYSQLite.sharedInstance.insertDB("GiantForJade@163.com", named: "ZGY")
+        //        GYSQLite.sharedInstance.deleteSpecificDB("ZGY")
+        //        GYSQLite.sharedInstance.findAll()
+        //        GYSQLite.sharedInstance.updateSpecialDB("DWYDA")
+        GYSQLite.sharedInstance.findSpecialDB("DWYDA")
     }
     
     func searchAction() {               
