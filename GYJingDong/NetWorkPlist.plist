@@ -6,6 +6,8 @@
 	<string>http://api.smzdm.com</string>
 	<key>Path</key>
 	<dict>
+		<key>HaoWu</key>
+		<string>/v1/haowu/haowu_category</string>
 		<key>FaXian</key>
 		<string>/v1/faxian/articles</string>
 		<key>V2Banner</key>

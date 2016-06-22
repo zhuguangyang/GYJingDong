@@ -82,7 +82,7 @@ class GYBanner: UIView {
         
         viewBgd.addSubview(_pgCtrl)
         
-        return viewBgd;
+        return viewBgd
         
     }
     

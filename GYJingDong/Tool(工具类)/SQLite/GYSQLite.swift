@@ -14,6 +14,7 @@ class GYSQLite: NSObject {
     let id = Expression<Int64>("id")
     let email = Expression<String>("email")
     let name = Expression<String?>("name")
+    let userID = Expression<String?>("userID")
     
     /// 创建数据库单利
     class var sharedInstance: GYSQLite {
@@ -30,6 +31,18 @@ class GYSQLite: NSObject {
         
         //创建表  ifNotExists如果不存在才会创建 无此条件 若表已存在 就会崩溃
         try! db.run(users.create(ifNotExists: true) { t in
+            t.column(id, primaryKey: true)
+            t.column(email, unique: true)
+            t.column(name)
+            })
+        /**
+         *  创建另一张表
+         *
+         *  @param true 是否存在
+         *
+         *  @return
+         */
+        try! db.run(JadeUser.create(ifNotExists: true) { t in
             t.column(id, primaryKey: true)
             t.column(email, unique: true)
             t.column(name)
@@ -113,6 +126,17 @@ class GYSQLite: NSObject {
         }
     }
     
+    /**
+     添加字段
+     */
+    func addColumnFunc() {
+        do {
+            try db.run(users.addColumn(userID))
+        }catch {
+            LogOverride.printLog(error)
+        }
+    }
+    
     /// 创建数据库操作柄
     private lazy var db: Connection = {
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
@@ -128,10 +152,28 @@ class GYSQLite: NSObject {
         return db!
     }()
     
+    /**
+     删除表
+     */
+    func deleteTable() {
+        do {
+            try db.run(users.drop(ifExists: true))
+        } catch {
+            LogOverride.printLog(error)
+        }
+    }
+    
     /// 创建表
     private lazy var users: Table = {
         let users = Table("users")
         return users
+    }()
+    
+    /// 创建另一张表
+    private lazy var JadeUser: Table = {
+        let giant = Table("JadeUser")
+        return giant
+        
     }()
     
 }

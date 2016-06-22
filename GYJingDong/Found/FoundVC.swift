@@ -11,6 +11,8 @@ import MJRefresh
 
 class FoundVC: GYBaseViewController {
     
+    let foundViewModel = FoundViewModel()
+    
     var collectionView:UICollectionView?
     ///保存轮播图
     var bannerArray:[GYBannerModel] = []
@@ -42,80 +44,29 @@ class FoundVC: GYBaseViewController {
         //        setupUI()
         weak var weakSelf = self
         collectionView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            weakSelf?.bannerArray.removeAll()
-            weakSelf?.btnArray.removeAll()
-            weakSelf?.productArray.removeAll()
-            weakSelf?.pageCount = 1
-            weakSelf?.offsetCount = 0
-            weakSelf?.getDatas()
+            weakSelf?.foundViewModel.getDatas({ (bannerArr1) in
+                weakSelf?.bannerArray = bannerArr1
+                weakSelf?.collectionView?.mj_header.endRefreshing()
+                }, btnBlock: { (btnArr1) in
+                    weakSelf?.btnArray = btnArr1
+                    weakSelf?.collectionView?.mj_header.endRefreshing()
+                },productBlock: {(productArr1) in
+                    weakSelf?.productArray = productArr1
+                    weakSelf?.collectionView?.mj_header.endRefreshing()
+            })
         })
         collectionView?.mj_header.beginRefreshing()
         collectionView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { 
             weakSelf?.pageCount = (weakSelf?.pageCount)! + 1
             weakSelf?.offsetCount += 20
-            weakSelf?.getFootDatas()
+            weakSelf?.foundViewModel.getFootDatas((weakSelf?.offsetCount)!, pageCount: (weakSelf?.pageCount)!, productBlock: { (productArr1) in
+                weakSelf?.productArray.appendContentsOf(productArr1)
+                weakSelf?.collectionView?.reloadData()
+                weakSelf?.collectionView?.mj_footer.endRefreshing()
+            })
         })
     }
-    /**
-     获取下拉刷新的数据
-     */
-    private func getDatas() {
-        weak var weakSelf = self
-        GYNetWorking.defaultManager?.GET("V2Banner", paramas: ["f":"iphone","type":"faxian","v":"6.3.2","weixin":1], sucess: { (obj) in
-            
-            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
-            for item in bannerA!{
-                let model = GYBannerModel()
-                model.imageNamed = item["img"]! as? String ?? ""
-                weakSelf?.bannerArray.append(model)
-            }
-            for item in  (obj["data"]!!["little_banner"]! as? [[String:AnyObject]])!{
-                let model = GYBannerModel()
-                model.imageNamed = item["img"]! as? String ?? ""
-                model.labelText = (item["title"] ?? "") as! String
-                weakSelf?.btnArray.append(model)
-            }
-            weakSelf?.collectionView?.mj_header.endRefreshing()
-            }, failure: { (error) in
-                print(error)
-        })
-        //http://api.smzdm.com/v1/faxian/articles?f=iphone&imgmode=0&limit=20&offset=0&page=1&v=6.3.2&weixin=1
-        GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
-            print(obj)
-            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
-            for item in bannerA!{
-                let model = GYBannerModel()
-                model.imageNamed = item["article_pic"]! as? String ?? ""
-                weakSelf?.productArray.append(model)
-            }
-            weakSelf?.collectionView?.mj_header.endRefreshing()
-            }, failure: { (error) in
-                print(error)
-        })
-        
-    }
-    
-    private func getFootDatas() {
-        weak var weakSelf = self
-        if pageCount == 300 {
-            weakSelf?.collectionView?.mj_footer.endRefreshingWithNoMoreData()
-            return
-        }
-        GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
-            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
-            for item in bannerA!{
-                let model = GYBannerModel()
-                model.imageNamed = item["article_pic"]! as? String ?? ""
-                weakSelf?.productArray.append(model)
-            }
-            weakSelf?.collectionView?.reloadData()
-            weakSelf?.collectionView?.mj_footer.endRefreshing()
-            }, failure: { (error) in
-                print(error)
-        })
-        
-    }
-    
+
     private func instanceUI() {
         collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
         shopLayout.minimumLineSpacing = 5
@@ -194,6 +145,32 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
             return CGSizeMake(SCREEN_WIDTH, heightHeadView!)
         }
         return CGSizeMake(SCREEN_WIDTH, 373)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let model = productArray[indexPath.row]
+        
+        let detail = DetailViewController()
+        detail.url = model.link
+        detail.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(detail, animated: true)
+        
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        weak var weakSelf = self
+        if scrollView.contentOffset.y >= 20 {
+            UIView.animateWithDuration(0.5, animations: { 
+                weakSelf?.navigationController?.navigationBar.hidden = true
+            })
+        }
+        if scrollView.contentOffset.y <= -20 {
+            UIView.animateWithDuration(0.5, animations: {
+                weakSelf?.navigationController?.navigationBar.hidden = false
+            })
+        }
+        
     }
     
     

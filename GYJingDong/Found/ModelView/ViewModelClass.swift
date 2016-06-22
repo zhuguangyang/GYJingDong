@@ -10,7 +10,7 @@ import UIKit
 
 class ViewModelClass: NSObject {
     
-    typealias _succesBlock = ((returnValue: AnyObject) -> Void)
+    typealias _succesBlock = ((AnyObject) -> Void)
     static func setBlockWith(returnBlock:((returnValue: AnyObject) -> Void),errorCodeBlock:((errorCode:AnyObject) -> Void),failureBlock:((failure: AnyObject) -> Void)) {
         
         

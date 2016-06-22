@@ -10,7 +10,11 @@ import UIKit
 
 class MeVC: GYBaseViewController {
     
+    let viewModel = FoundViewModel()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 }

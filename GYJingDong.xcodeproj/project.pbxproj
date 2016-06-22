@@ -27,6 +27,10 @@
 		B75FCF811D11497E0039F935 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF801D11497E0039F935 /* MeVC.swift */; };
 		B76BE0FA1D19092000A4B6E9 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76BE0F91D19092000A4B6E9 /* SQLite.framework */; };
 		B76BE0FC1D190B0000A4B6E9 /* GYSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE0FB1D190B0000A4B6E9 /* GYSQLite.swift */; };
+		B76BE0FE1D19542400A4B6E9 /* GYBaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE0FD1D19542400A4B6E9 /* GYBaseWebViewController.swift */; };
+		B76BE1001D1955A400A4B6E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE0FF1D1955A400A4B6E9 /* DetailViewController.swift */; };
+		B76BE1041D1A402D00A4B6E9 /* GoodThingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */; };
+		B76BE1051D1A402D00A4B6E9 /* GoodThingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */; };
 		B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */; };
 		B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B71D0FA81B00F0A2ED /* ViewController.swift */; };
 		B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796D9B91D0FA81B00F0A2ED /* Main.storyboard */; };
@@ -82,6 +86,10 @@
 		B76BE0F71D1907C200A4B6E9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		B76BE0F91D19092000A4B6E9 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GYJingDong-fjvduqwxekslqwereftnvnjytoll/Build/Products/Debug-iphonesimulator/SQLite.framework"; sourceTree = "<group>"; };
 		B76BE0FB1D190B0000A4B6E9 /* GYSQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYSQLite.swift; sourceTree = "<group>"; };
+		B76BE0FD1D19542400A4B6E9 /* GYBaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBaseWebViewController.swift; sourceTree = "<group>"; };
+		B76BE0FF1D1955A400A4B6E9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodThingTableViewCell.swift; sourceTree = "<group>"; };
+		B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodThingTableViewCell.xib; sourceTree = "<group>"; };
 		B796D9B21D0FA81B00F0A2ED /* GYJingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYJingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B796D9B71D0FA81B00F0A2ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				B705ED311D1273330044DE64 /* ChildHeadView.swift */,
 				B705ED381D12A7A30044DE64 /* FoundCell.swift */,
 				B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */,
+				B76BE0FF1D1955A400A4B6E9 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 			children = (
 				B75FCF701D1144160039F935 /* GYTabBarViewController.swift */,
 				B75FCF781D1146930039F935 /* GYBaseViewController.swift */,
+				B76BE0FD1D19542400A4B6E9 /* GYBaseWebViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -246,6 +256,7 @@
 		B75FCF741D1144DA0039F935 /* GoodThing */ = {
 			isa = PBXGroup;
 			children = (
+				B76BE1011D1A400C00A4B6E9 /* View */,
 				B75FCF7E1D11496D0039F935 /* GoodThingVC.swift */,
 			);
 			path = GoodThing;
@@ -265,6 +276,15 @@
 				B76BE0FB1D190B0000A4B6E9 /* GYSQLite.swift */,
 			);
 			path = SQLite;
+			sourceTree = "<group>";
+		};
+		B76BE1011D1A400C00A4B6E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */,
+				B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B796D9A91D0FA81B00F0A2ED = {
@@ -447,6 +467,7 @@
 				B796D9C01D0FA81B00F0A2ED /* LaunchScreen.storyboard in Resources */,
 				B796D9BD1D0FA81B00F0A2ED /* Assets.xcassets in Resources */,
 				B797CAA21D179F2900491C11 /* MJ.gif in Resources */,
+				B76BE1051D1A402D00A4B6E9 /* GoodThingTableViewCell.xib in Resources */,
 				B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */,
 				B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */,
 			);
@@ -523,8 +544,11 @@
 			files = (
 				B75FCF711D1144160039F935 /* GYTabBarViewController.swift in Sources */,
 				B797CAA71D17EC0300491C11 /* FoundViewModel.swift in Sources */,
+				B76BE1001D1955A400A4B6E9 /* DetailViewController.swift in Sources */,
 				B705ED2E1D12664B0044DE64 /* FoundHeadView.swift in Sources */,
 				B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */,
+				B76BE1041D1A402D00A4B6E9 /* GoodThingTableViewCell.swift in Sources */,
+				B76BE0FE1D19542400A4B6E9 /* GYBaseWebViewController.swift in Sources */,
 				B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */,
 				B75FCF691D1130710039F935 /* UserAccount.swift in Sources */,
 				B705ED371D1282860044DE64 /* GYBannerModel.swift in Sources */,
