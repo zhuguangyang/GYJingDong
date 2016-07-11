@@ -32,6 +32,7 @@
 		B76BE1041D1A402D00A4B6E9 /* GoodThingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */; };
 		B76BE1051D1A402D00A4B6E9 /* GoodThingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */; };
 		B77D081E1D2DF03400F1F2ED /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77D081D1D2DF03400F1F2ED /* CircularLoaderView.swift */; };
+		B79153951D33B5DD008D4E6A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79153941D33B5DD008D4E6A /* SystemConfiguration.framework */; };
 		B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */; };
 		B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B71D0FA81B00F0A2ED /* ViewController.swift */; };
 		B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796D9B91D0FA81B00F0A2ED /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodThingTableViewCell.swift; sourceTree = "<group>"; };
 		B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodThingTableViewCell.xib; sourceTree = "<group>"; };
 		B77D081D1D2DF03400F1F2ED /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
+		B79153941D33B5DD008D4E6A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B796D9B21D0FA81B00F0A2ED /* GYJingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYJingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B796D9B71D0FA81B00F0A2ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79153951D33B5DD008D4E6A /* SystemConfiguration.framework in Frameworks */,
 				B76BE0FA1D19092000A4B6E9 /* SQLite.framework in Frameworks */,
 				A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */,
 			);
@@ -141,6 +144,7 @@
 		4091FE06FD13AB8285204070 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B79153941D33B5DD008D4E6A /* SystemConfiguration.framework */,
 				B76BE0F91D19092000A4B6E9 /* SQLite.framework */,
 				B76BE0F71D1907C200A4B6E9 /* libsqlite3.0.tbd */,
 				01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */,
@@ -208,6 +212,7 @@
 		B75FCF5A1D1128E40039F935 /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				B79153901D33B458008D4E6A /* 网络监控 */,
 				B77D081C1D2DEFA800F1F2ED /* 图片进度条 */,
 				B76BE0F61D18ECF400A4B6E9 /* SQLite */,
 				B797CAAA1D17F38F00491C11 /* LogMethod */,
@@ -296,6 +301,13 @@
 				B77D081D1D2DF03400F1F2ED /* CircularLoaderView.swift */,
 			);
 			path = "图片进度条";
+			sourceTree = "<group>";
+		};
+		B79153901D33B458008D4E6A /* 网络监控 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "网络监控";
 			sourceTree = "<group>";
 		};
 		B796D9A91D0FA81B00F0A2ED = {

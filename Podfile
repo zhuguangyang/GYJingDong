@@ -7,4 +7,5 @@ target 'GYJingDong' do
     pod "SwiftyJSON"
     pod "MJRefresh"
     pod "SQLite.swift", '~> 0.10.1'
+    pod 'Reachability', '~> 3.2'
 end

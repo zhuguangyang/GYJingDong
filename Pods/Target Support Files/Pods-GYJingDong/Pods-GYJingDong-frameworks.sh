@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-GYJingDong/Alamofire.framework"
   install_framework "Pods-GYJingDong/MJRefresh.framework"
+  install_framework "Pods-GYJingDong/Reachability.framework"
   install_framework "Pods-GYJingDong/SDWebImage.framework"
   install_framework "Pods-GYJingDong/SQLite.framework"
   install_framework "Pods-GYJingDong/SnapKit.framework"
@@ -94,6 +95,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-GYJingDong/Alamofire.framework"
   install_framework "Pods-GYJingDong/MJRefresh.framework"
+  install_framework "Pods-GYJingDong/Reachability.framework"
   install_framework "Pods-GYJingDong/SDWebImage.framework"
   install_framework "Pods-GYJingDong/SQLite.framework"
   install_framework "Pods-GYJingDong/SnapKit.framework"

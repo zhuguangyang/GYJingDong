@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var reach: Reachability?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        reach = Reachability(hostName: "www.baidu.com")
+        reach!.startNotifier()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reachabilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
+        
         
         //设置文本字体大小颜色
         //        let attr = [NSFontAttributeName: UIFont.systemFontOfSize(20),NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -26,10 +33,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.whiteColor()
         
         window?.makeKeyAndVisible()
-        
+        // Allocate a reachability object
+
         window?.rootViewController = GYTabBarViewController()
         
         return true
+    }
+    
+    func reachabilityChanged(notification:NSNotification) {
+        
+        let reach1 = notification.object
+        print(reach?.currentReachabilityString())
+        if (reach1?.isKindOfClass(Reachability.classForCoder())) != false {
+            let status: NetworkStatus = (reach1?.currentReachabilityStatus())!
+            
+            switch status {
+            case .NotReachable:
+                print("网络不可用")
+                break
+            case .ReachableViaWiFi:
+                print("Wifi")
+                break
+            case .ReachableViaWWAN:
+                print("普通网络")
+                break
+            }
+            
+        }
+        
     }
     
     func applicationWillResignActive(application: UIApplication) {
