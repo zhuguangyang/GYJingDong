@@ -31,6 +31,7 @@
 		B76BE1001D1955A400A4B6E9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE0FF1D1955A400A4B6E9 /* DetailViewController.swift */; };
 		B76BE1041D1A402D00A4B6E9 /* GoodThingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */; };
 		B76BE1051D1A402D00A4B6E9 /* GoodThingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */; };
+		B77D081E1D2DF03400F1F2ED /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77D081D1D2DF03400F1F2ED /* CircularLoaderView.swift */; };
 		B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */; };
 		B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796D9B71D0FA81B00F0A2ED /* ViewController.swift */; };
 		B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796D9B91D0FA81B00F0A2ED /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		B76BE0FF1D1955A400A4B6E9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B76BE1021D1A402D00A4B6E9 /* GoodThingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodThingTableViewCell.swift; sourceTree = "<group>"; };
 		B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodThingTableViewCell.xib; sourceTree = "<group>"; };
+		B77D081D1D2DF03400F1F2ED /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		B796D9B21D0FA81B00F0A2ED /* GYJingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYJingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B796D9B71D0FA81B00F0A2ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		B75FCF5A1D1128E40039F935 /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				B77D081C1D2DEFA800F1F2ED /* 图片进度条 */,
 				B76BE0F61D18ECF400A4B6E9 /* SQLite */,
 				B797CAAA1D17F38F00491C11 /* LogMethod */,
 				B705ED331D127EFA0044DE64 /* Lib */,
@@ -285,6 +288,14 @@
 				B76BE1031D1A402D00A4B6E9 /* GoodThingTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B77D081C1D2DEFA800F1F2ED /* 图片进度条 */ = {
+			isa = PBXGroup;
+			children = (
+				B77D081D1D2DF03400F1F2ED /* CircularLoaderView.swift */,
+			);
+			path = "图片进度条";
 			sourceTree = "<group>";
 		};
 		B796D9A91D0FA81B00F0A2ED = {
@@ -563,6 +574,7 @@
 				B705ED321D1273330044DE64 /* ChildHeadView.swift in Sources */,
 				B796D9B61D0FA81B00F0A2ED /* AppDelegate.swift in Sources */,
 				B75FCF7F1D11496D0039F935 /* GoodThingVC.swift in Sources */,
+				B77D081E1D2DF03400F1F2ED /* CircularLoaderView.swift in Sources */,
 				B797CAA91D17EE0C00491C11 /* ViewModelClass.swift in Sources */,
 				B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */,
 				B75FCF791D1146930039F935 /* GYBaseViewController.swift in Sources */,

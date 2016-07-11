@@ -8,6 +8,17 @@
 
 import UIKit
 
+/**
+ 打印Log日志
+ */
+// func print<T>(message: T,file: String = #file,method: String = #function, line: Int = #line)
+//{
+//    //        #if DEBUG
+//    print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+//    //        #endif
+//}
+
+
 class LogOverride: NSObject {
     
     /**
@@ -19,4 +30,5 @@ class LogOverride: NSObject {
         print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
         //        #endif
     }
+    
 }

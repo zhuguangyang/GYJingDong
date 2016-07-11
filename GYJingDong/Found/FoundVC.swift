@@ -66,7 +66,7 @@ class FoundVC: GYBaseViewController {
             })
         })
     }
-
+    
     private func instanceUI() {
         collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
         shopLayout.minimumLineSpacing = 5
@@ -109,9 +109,20 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FoundCell", forIndexPath: indexPath) as! FoundCell
+        
+        let progressIndicatorView = CircularLoaderView(frame: CGRectZero)
         let model  = productArray[indexPath.row]
         
-        cell.iconImage.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_CommentDetai_Big"))
+        //        cell.iconImage.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_CommentDetai_Big"))
+        cell.iconImage.addSubview(progressIndicatorView)
+        progressIndicatorView.frame = cell.iconImage.bounds
+        progressIndicatorView.autoresizingMask = [.FlexibleWidth,.FlexibleHeight];
+        cell.iconImage.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: nil, options: .CacheMemoryOnly, progress: {(reseivdSize, expectedSize) -> Void in
+            progressIndicatorView.progress = CGFloat(reseivdSize) / CGFloat(expectedSize)
+            
+        }) { (image, error, _, _) -> Void in
+            progressIndicatorView.reveal()
+        }
         return cell
         
     }
