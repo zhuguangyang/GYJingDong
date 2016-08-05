@@ -1,16 +1,18 @@
 PODS:
-  - Alamofire (3.4.0)
-  - MJRefresh (3.1.0)
+  - Alamofire (3.4.1)
+  - JDStatusBarNotification (1.5.3)
+  - MJRefresh (3.1.10)
   - Reachability (3.2)
-  - SDWebImage (3.7.6):
-    - SDWebImage/Core (= 3.7.6)
-  - SDWebImage/Core (3.7.6)
-  - SnapKit (0.21.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SnapKit (0.21.1)
   - SQLite.swift (0.10.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
+  - JDStatusBarNotification
   - MJRefresh
   - Reachability (~> 3.2)
   - SDWebImage
@@ -19,14 +21,15 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
+  MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
-  SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   SQLite.swift: 6a6e4b034efc317ce4e203b6af2d3024fee2b570
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: fb5a0a316301144aef0268a489ac88c96bba12a4
+PODFILE CHECKSUM: 3c1316fcf5374744d5a5fb149394ea9b2f6f8052
 
 COCOAPODS: 1.0.1

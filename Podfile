@@ -8,4 +8,6 @@ target 'GYJingDong' do
     pod "MJRefresh"
     pod "SQLite.swift", '~> 0.10.1'
     pod 'Reachability', '~> 3.2'
+    pod 'JDStatusBarNotification'
+    
 end

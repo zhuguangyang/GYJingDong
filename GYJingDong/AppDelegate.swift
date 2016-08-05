@@ -8,6 +8,8 @@
 
 import UIKit
 import Reachability
+//状态栏显示网络状态
+import JDStatusBarNotification
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         // Allocate a reachability object
-
+        
         window?.rootViewController = GYTabBarViewController()
         
         return true
@@ -49,13 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             switch status {
             case .NotReachable:
-                print("网络不可用")
+                JDStatusBarNotification.showWithStatus("网络不可用")
+                JDStatusBarNotification.dismissAfter(2.0)
                 break
             case .ReachableViaWiFi:
-                print("Wifi")
+                JDStatusBarNotification.showWithStatus("WIFI")
+                JDStatusBarNotification.dismissAfter(2.0)
                 break
             case .ReachableViaWWAN:
-                print("普通网络")
+                JDStatusBarNotification.showWithStatus("普通网络")
+                JDStatusBarNotification.dismissAfter(2.0)
                 break
             }
             
