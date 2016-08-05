@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */; };
+		42F8547A2EC9C8CFD42AAE78 /* Pods_GYJingDong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B30D7782FFF0A4DA576C94C /* Pods_GYJingDong.framework */; };
 		B705ED2E1D12664B0044DE64 /* FoundHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED2D1D12664B0044DE64 /* FoundHeadView.swift */; };
 		B705ED321D1273330044DE64 /* ChildHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED311D1273330044DE64 /* ChildHeadView.swift */; };
 		B705ED351D127F040044DE64 /* GYBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED341D127F040044DE64 /* GYBanner.swift */; };
@@ -64,9 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYJingDong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.release.xcconfig"; sourceTree = "<group>"; };
-		9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.debug.xcconfig"; sourceTree = "<group>"; };
+		194D8111872785ABACE021BD /* Pods-GYJingDong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.release.xcconfig"; sourceTree = "<group>"; };
+		579F8B092A3E1C6F42FA7895 /* Pods-GYJingDong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.debug.xcconfig"; sourceTree = "<group>"; };
+		7B30D7782FFF0A4DA576C94C /* Pods_GYJingDong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYJingDong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B705ED2D1D12664B0044DE64 /* FoundHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundHeadView.swift; sourceTree = "<group>"; };
 		B705ED311D1273330044DE64 /* ChildHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildHeadView.swift; sourceTree = "<group>"; };
 		B705ED341D127F040044DE64 /* GYBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBanner.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			files = (
 				B79153951D33B5DD008D4E6A /* SystemConfiguration.framework in Frameworks */,
 				B76BE0FA1D19092000A4B6E9 /* SQLite.framework in Frameworks */,
-				A73D9E4B2837F455C839535C /* Pods_GYJingDong.framework in Frameworks */,
+				42F8547A2EC9C8CFD42AAE78 /* Pods_GYJingDong.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,16 +147,16 @@
 				B79153941D33B5DD008D4E6A /* SystemConfiguration.framework */,
 				B76BE0F91D19092000A4B6E9 /* SQLite.framework */,
 				B76BE0F71D1907C200A4B6E9 /* libsqlite3.0.tbd */,
-				01F9A8DB6D1ACF82E97F938D /* Pods_GYJingDong.framework */,
+				7B30D7782FFF0A4DA576C94C /* Pods_GYJingDong.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A93241A9B4B1EB6D3DF7B7CE /* Pods */ = {
+		8AD056B0F73D01953A2BF1B5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */,
-				094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */,
+				579F8B092A3E1C6F42FA7895 /* Pods-GYJingDong.debug.xcconfig */,
+				194D8111872785ABACE021BD /* Pods-GYJingDong.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -317,8 +317,8 @@
 				B796D9C91D0FA81B00F0A2ED /* GYJingDongTests */,
 				B796D9D41D0FA81B00F0A2ED /* GYJingDongUITests */,
 				B796D9B31D0FA81B00F0A2ED /* Products */,
-				A93241A9B4B1EB6D3DF7B7CE /* Pods */,
 				4091FE06FD13AB8285204070 /* Frameworks */,
+				8AD056B0F73D01953A2BF1B5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,12 +385,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B796D9DA1D0FA81B00F0A2ED /* Build configuration list for PBXNativeTarget "GYJingDong" */;
 			buildPhases = (
-				3948985A14C3839322B3CFB4 /* Check Pods Manifest.lock */,
+				19E1EE59A06867930A05F5A3 /* [CP] Check Pods Manifest.lock */,
 				B796D9AE1D0FA81B00F0A2ED /* Sources */,
 				B796D9AF1D0FA81B00F0A2ED /* Frameworks */,
 				B796D9B01D0FA81B00F0A2ED /* Resources */,
-				F2EFF6300BE7AD8EC36C04E6 /* Embed Pods Frameworks */,
-				E8D366E363A9B4DB54B4E068 /* Copy Pods Resources */,
+				B09367199DD679AB337F03DC /* [CP] Embed Pods Frameworks */,
+				1562BF450F35719E3B081F08 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -513,29 +513,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3948985A14C3839322B3CFB4 /* Check Pods Manifest.lock */ = {
+		1562BF450F35719E3B081F08 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E8D366E363A9B4DB54B4E068 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,14 +528,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2EFF6300BE7AD8EC36C04E6 /* Embed Pods Frameworks */ = {
+		19E1EE59A06867930A05F5A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B09367199DD679AB337F03DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,7 +729,7 @@
 		};
 		B796D9DB1D0FA81B00F0A2ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9565E2E7C43A6BCBA112C59A /* Pods-GYJingDong.debug.xcconfig */;
+			baseConfigurationReference = 579F8B092A3E1C6F42FA7895 /* Pods-GYJingDong.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -747,7 +747,7 @@
 		};
 		B796D9DC1D0FA81B00F0A2ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 094782EB7C494F640C93EB3B /* Pods-GYJingDong.release.xcconfig */;
+			baseConfigurationReference = 194D8111872785ABACE021BD /* Pods-GYJingDong.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
