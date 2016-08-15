@@ -14,8 +14,6 @@
 		B705ED371D1282860044DE64 /* GYBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED361D1282860044DE64 /* GYBannerModel.swift */; };
 		B705ED391D12A7A30044DE64 /* FoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED381D12A7A30044DE64 /* FoundCell.swift */; };
 		B705ED3B1D12A7CD0044DE64 /* FoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */; };
-		B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF601D1129C10039F935 /* GYNetWorking.swift */; };
-		B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */; };
 		B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */; };
 		B75FCF671D1130010039F935 /* GlobaVivale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF661D1130010039F935 /* GlobaVivale.swift */; };
 		B75FCF691D1130710039F935 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF681D1130710039F935 /* UserAccount.swift */; };
@@ -44,6 +42,8 @@
 		B797CAA71D17EC0300491C11 /* FoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797CAA61D17EC0300491C11 /* FoundViewModel.swift */; };
 		B797CAA91D17EE0C00491C11 /* ViewModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797CAA81D17EE0C00491C11 /* ViewModelClass.swift */; };
 		B797CAAC1D17F39C00491C11 /* LogOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797CAAB1D17F39C00491C11 /* LogOverride.swift */; };
+		B7B8ECE61D61703F0058C6CF /* GYNetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B8ECE41D61703F0058C6CF /* GYNetWorking.swift */; };
+		B7B8ECE71D61703F0058C6CF /* NetWorkPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7B8ECE51D61703F0058C6CF /* NetWorkPlist.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +73,6 @@
 		B705ED361D1282860044DE64 /* GYBannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBannerModel.swift; sourceTree = "<group>"; };
 		B705ED381D12A7A30044DE64 /* FoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundCell.swift; sourceTree = "<group>"; };
 		B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundCell.xib; sourceTree = "<group>"; };
-		B75FCF601D1129C10039F935 /* GYNetWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GYNetWorking.swift; path = ../GYNetWorking.swift; sourceTree = "<group>"; };
-		B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NetWorkPlist.plist; path = ../NetWorkPlist.plist; sourceTree = "<group>"; };
 		B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthVCViewController.swift; sourceTree = "<group>"; };
 		B75FCF661D1130010039F935 /* GlobaVivale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobaVivale.swift; sourceTree = "<group>"; };
 		B75FCF681D1130710039F935 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
@@ -111,6 +109,8 @@
 		B797CAA61D17EC0300491C11 /* FoundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundViewModel.swift; sourceTree = "<group>"; };
 		B797CAA81D17EE0C00491C11 /* ViewModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelClass.swift; sourceTree = "<group>"; };
 		B797CAAB1D17F39C00491C11 /* LogOverride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOverride.swift; sourceTree = "<group>"; };
+		B7B8ECE41D61703F0058C6CF /* GYNetWorking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYNetWorking.swift; sourceTree = "<group>"; };
+		B7B8ECE51D61703F0058C6CF /* NetWorkPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NetWorkPlist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,15 +223,6 @@
 			path = "Tool(工具类)";
 			sourceTree = "<group>";
 		};
-		B75FCF6A1D113FC10039F935 /* NetWorkManager */ = {
-			isa = PBXGroup;
-			children = (
-				B75FCF601D1129C10039F935 /* GYNetWorking.swift */,
-				B75FCF621D1129CA0039F935 /* NetWorkPlist.plist */,
-			);
-			path = NetWorkManager;
-			sourceTree = "<group>";
-		};
 		B75FCF6F1D1143F70039F935 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,11 +326,11 @@
 		B796D9B41D0FA81B00F0A2ED /* GYJingDong */ = {
 			isa = PBXGroup;
 			children = (
+				B7B8ECE31D61703F0058C6CF /* NetWorkManager */,
 				B75FCF721D1144930039F935 /* ValueBuy */,
 				B75FCF731D1144A20039F935 /* Found */,
 				B75FCF741D1144DA0039F935 /* GoodThing */,
 				B75FCF751D1144ED0039F935 /* Me */,
-				B75FCF6A1D113FC10039F935 /* NetWorkManager */,
 				B75FCF5A1D1128E40039F935 /* Tool(工具类) */,
 				B75FCF581D1128740039F935 /* OAuth(授权) */,
 				B796D9B51D0FA81B00F0A2ED /* AppDelegate.swift */,
@@ -376,6 +367,15 @@
 				B797CAAB1D17F39C00491C11 /* LogOverride.swift */,
 			);
 			path = LogMethod;
+			sourceTree = "<group>";
+		};
+		B7B8ECE31D61703F0058C6CF /* NetWorkManager */ = {
+			isa = PBXGroup;
+			children = (
+				B7B8ECE41D61703F0058C6CF /* GYNetWorking.swift */,
+				B7B8ECE51D61703F0058C6CF /* NetWorkPlist.plist */,
+			);
+			path = NetWorkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,7 +491,7 @@
 				B796D9BD1D0FA81B00F0A2ED /* Assets.xcassets in Resources */,
 				B797CAA21D179F2900491C11 /* MJ.gif in Resources */,
 				B76BE1051D1A402D00A4B6E9 /* GoodThingTableViewCell.xib in Resources */,
-				B75FCF631D1129CA0039F935 /* NetWorkPlist.plist in Resources */,
+				B7B8ECE71D61703F0058C6CF /* NetWorkPlist.plist in Resources */,
 				B796D9BB1D0FA81B00F0A2ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B8ECE61D61703F0058C6CF /* GYNetWorking.swift in Sources */,
 				B75FCF711D1144160039F935 /* GYTabBarViewController.swift in Sources */,
 				B797CAA71D17EC0300491C11 /* FoundViewModel.swift in Sources */,
 				B76BE1001D1955A400A4B6E9 /* DetailViewController.swift in Sources */,
@@ -572,7 +573,6 @@
 				B796D9B81D0FA81B00F0A2ED /* ViewController.swift in Sources */,
 				B76BE1041D1A402D00A4B6E9 /* GoodThingTableViewCell.swift in Sources */,
 				B76BE0FE1D19542400A4B6E9 /* GYBaseWebViewController.swift in Sources */,
-				B75FCF611D1129C10039F935 /* GYNetWorking.swift in Sources */,
 				B75FCF691D1130710039F935 /* UserAccount.swift in Sources */,
 				B705ED371D1282860044DE64 /* GYBannerModel.swift in Sources */,
 				B705ED351D127F040044DE64 /* GYBanner.swift in Sources */,
