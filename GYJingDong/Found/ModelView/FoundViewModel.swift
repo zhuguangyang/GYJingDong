@@ -60,7 +60,7 @@ class FoundViewModel: ViewModelClass {
         })
         
     }
-    
+    //
     func getFootDatas(_ offsetCount: Int,pageCount: Int,productBlock:@escaping ((_ productArr1: [GYBannerModel]) -> Void)) {
         weak var weakSelf = self
         GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
