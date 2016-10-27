@@ -24,7 +24,7 @@ class LogOverride: NSObject {
     /**
      打印Log日志
      */
-    static  func printLog<T>(message: T,file: String = #file,method: String = #function, line: Int = #line)
+    static  func printLog<T>(_ message: T,file: String = #file,method: String = #function, line: Int = #line)
     {
         //        #if DEBUG
         print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")

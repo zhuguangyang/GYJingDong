@@ -19,7 +19,7 @@ class GYTabBarViewController: UITabBarController {
         
         viewControllers = [giveMeNavWithVc(value, imageName: "mainNormal", selectImagename: "mainSeleted"),giveMeNavWithVc(found, imageName: "goodsNormal", selectImagename: "goodsseleted"),giveMeNavWithVc(goodThing, imageName: "dingyueItem", selectImagename: "dingyueItemSelected"),giveMeNavWithVc(me, imageName: "personNormal", selectImagename: "personSeleted")]
         
-        tabBar.tintColor = UIColor.redColor()
+        tabBar.tintColor = UIColor.red
     }
     
     /**
@@ -31,10 +31,10 @@ class GYTabBarViewController: UITabBarController {
      
      - returns: 
      */
-    func giveMeVC(vcName: String,vcTitle: String,vcItemTitle: String) -> UIViewController {
+    func giveMeVC(_ vcName: String,vcTitle: String,vcItemTitle: String) -> UIViewController {
         
         /// 命名空间
-        let nameSpace = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
+        let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
         let cls: AnyClass? = NSClassFromString(nameSpace + "." + vcName)
         
         //将AnyClass 转化为指定的类型
@@ -51,10 +51,10 @@ class GYTabBarViewController: UITabBarController {
      获取取消渲染的image
      - parameter imageName: 图片名称
      */
-    func removeRendering(imageName:String) -> UIImage {
+    func removeRendering(_ imageName:String) -> UIImage {
         let image = UIImage(named: imageName)
         
-        return (image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal))!
+        return (image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal))!
     }
     
     /**
@@ -66,24 +66,24 @@ class GYTabBarViewController: UITabBarController {
      
      - returns:
      */
-    func giveMeNavWithVc(vc: UIViewController,imageName: String,selectImagename: String) -> UINavigationController{
+    func giveMeNavWithVc(_ vc: UIViewController,imageName: String,selectImagename: String) -> UINavigationController{
         
         //        if vc .isKindOfClass(MeVC) {}
         let nav = UINavigationController(rootViewController: vc)
         //        nav.navigationBar.translucent = true
         //这个值需要自己在设置
         //设置背景图片 241 77 74
-        nav.navigationBar.setBackgroundImage(UIImage(named:"navi_zhi"), forBarMetrics: UIBarMetrics.Default)
+        nav.navigationBar.setBackgroundImage(UIImage(named:"navi_zhi"), for: UIBarMetrics.default)
         //根据图层关系设置背景图片也可解决 背景颜色差20高度的问题
         //        let image = UIImageView(image: UIImage(named: "navi_zhi"))
         //        image.frame = nav.navigationBar.bounds
         //        nav.navigationBar.insertSubview(image, atIndex: 1)
         //        nav.navigationBar.backgroundColor = UIColor(red: 241/255.0, green: 77/255.0, blue: 74/255.0, alpha: 1.0)
         // 设置背景颜色缺失20  补足背景颜色
-        let statusView = UIView(frame: CGRectMake(0,0,UIScreen.mainScreen().bounds.size.width,20))
+        let statusView = UIView(frame: CGRect(x: 0,y: 0,width: UIScreen.main.bounds.size.width,height: 20))
         statusView.backgroundColor = UIColor(red: 241/255.0, green: 90/255.0, blue: 89/255.0, alpha: 1.0)
         view.addSubview(statusView)
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: true)
         nav.navigationBar.backgroundColor = UIColor(red: 241/255.0, green: 90/255.0, blue: 89/255.0, alpha: 1.0)
         
         nav.tabBarItem = UITabBarItem.init(title: vc.tabBarItem.title, image: removeRendering(imageName), selectedImage: removeRendering(selectImagename))
@@ -97,16 +97,16 @@ class GYTabBarViewController: UITabBarController {
      
      - returns: 图片
      */
-    func createImageWithColor(color:UIColor) -> UIImage {
-        let rect = CGRectMake(0, 0, 1.0, 1.0)
+    func createImageWithColor(_ color:UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
         
     }
     

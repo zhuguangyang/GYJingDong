@@ -16,7 +16,7 @@ class FoundHeadView: UIView{
         
     }
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         
     }
     

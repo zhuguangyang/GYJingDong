@@ -36,7 +36,7 @@ class FoundVC: GYBaseViewController {
         }
     }
     
-    private var shopLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    fileprivate var shopLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +60,15 @@ class FoundVC: GYBaseViewController {
             weakSelf?.pageCount = (weakSelf?.pageCount)! + 1
             weakSelf?.offsetCount += 20
             weakSelf?.foundViewModel.getFootDatas((weakSelf?.offsetCount)!, pageCount: (weakSelf?.pageCount)!, productBlock: { (productArr1) in
-                weakSelf?.productArray.appendContentsOf(productArr1)
+                weakSelf?.productArray.append(contentsOf: productArr1)
                 weakSelf?.collectionView?.reloadData()
                 weakSelf?.collectionView?.mj_footer.endRefreshing()
             })
         })
     }
     
-    private func instanceUI() {
-        collectionView = UICollectionView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT), collectionViewLayout: shopLayout)
+    fileprivate func instanceUI() {
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), collectionViewLayout: shopLayout)
         shopLayout.minimumLineSpacing = 5
         shopLayout.minimumInteritemSpacing = 5
         //        shopLayout.footerReferenceSize = CGSizeZero
@@ -76,16 +76,16 @@ class FoundVC: GYBaseViewController {
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
-        collectionView?.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        collectionView?.backgroundColor = UIColor.groupTableViewBackground
         view.addSubview(collectionView!)
         
-        collectionView?.registerNib(UINib(nibName: "FoundCell",bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "FoundCell")
-        collectionView?.registerClass(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeadView")
+        collectionView?.register(UINib(nibName: "FoundCell",bundle: Bundle.main), forCellWithReuseIdentifier: "FoundCell")
+        collectionView?.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeadView")
     }
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         let banner = GYBanner()
-        let bannerView = banner.initWithFrame(CGRectMake(0, 0, SCREEN_WIDTH, 180)) { (index) in
+        let bannerView = banner.initWithFrame(CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 180)) { (index) in
             
         }
         banner.reloadGYBanner(bannerArray)
@@ -93,7 +93,7 @@ class FoundVC: GYBaseViewController {
         
         let headView = ChildHeadView()
         headView.modelArr = btnArray
-        headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, (SCREEN_WIDTH/4) * 2)
+        headView.frame = CGRect(x: 0, y: bannerView.frame.maxY, width: SCREEN_WIDTH, height: (SCREEN_WIDTH/4) * 2)
         collectionView?.addSubview(headView)
     }
     
@@ -102,22 +102,22 @@ class FoundVC: GYBaseViewController {
 
 extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //        LogOverride.printLog("productArray.count:" + "\(productArray.count)")
         return productArray.count ?? 0
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FoundCell", forIndexPath: indexPath) as! FoundCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoundCell", for: indexPath) as! FoundCell
         
-        let progressIndicatorView = CircularLoaderView(frame: CGRectZero)
-        let model  = productArray[indexPath.row]
+        let progressIndicatorView = CircularLoaderView(frame: CGRect.zero)
+        let model  = productArray[(indexPath as NSIndexPath).row]
         
         //        cell.iconImage.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_CommentDetai_Big"))
         cell.iconImage.addSubview(progressIndicatorView)
         progressIndicatorView.frame = cell.iconImage.bounds
-        progressIndicatorView.autoresizingMask = [.FlexibleWidth,.FlexibleHeight];
-        cell.iconImage.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: nil, options: .CacheMemoryOnly, progress: {(reseivdSize, expectedSize) -> Void in
+        progressIndicatorView.autoresizingMask = [.flexibleWidth,.flexibleHeight];
+        cell.iconImage.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: nil, options: .cacheMemoryOnly, progress: {(reseivdSize, expectedSize) -> Void in
             progressIndicatorView.progress = CGFloat(reseivdSize) / CGFloat(expectedSize)
             
         }) { (image, error, _, _) -> Void in
@@ -127,13 +127,13 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         var reusableview = UICollectionReusableView()
         if kind == UICollectionElementKindSectionHeader {
-            reusableview = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HeadView", forIndexPath: indexPath)
+            reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeadView", for: indexPath)
             let banner = GYBanner()
-            let bannerView = banner.initWithFrame(CGRectMake(0, 0, SCREEN_WIDTH, 180)) { (index) in
+            let bannerView = banner.initWithFrame(CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 180)) { (index) in
                 
             }
             banner.reloadGYBanner(bannerArray)
@@ -141,7 +141,7 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
             
             let headView = ChildHeadView()
             headView.modelArr = btnArray
-            headView.frame = CGRectMake(0, CGRectGetMaxY(bannerView.frame), SCREEN_WIDTH, (SCREEN_WIDTH/4) * 2)
+            headView.frame = CGRect(x: 0, y: bannerView.frame.maxY, width: SCREEN_WIDTH, height: (SCREEN_WIDTH/4) * 2)
             reusableview.addSubview(headView)
             heightHeadView = headView.frame.size.height + 180
         }
@@ -150,17 +150,17 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if heightHeadView != nil {
             LogOverride.printLog(heightHeadView)
-            return CGSizeMake(SCREEN_WIDTH, heightHeadView!)
+            return CGSize(width: SCREEN_WIDTH, height: heightHeadView!)
         }
-        return CGSizeMake(SCREEN_WIDTH, 373)
+        return CGSize(width: SCREEN_WIDTH, height: 373)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let model = productArray[indexPath.row]
+        let model = productArray[(indexPath as NSIndexPath).row]
         
         let detail = DetailViewController()
         detail.url = model.link
@@ -169,16 +169,16 @@ extension FoundVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         weak var weakSelf = self
         if scrollView.contentOffset.y >= 20 {
-            UIView.animateWithDuration(0.5, animations: { 
-                weakSelf?.navigationController?.navigationBar.hidden = true
+            UIView.animate(withDuration: 0.5, animations: { 
+                weakSelf?.navigationController?.navigationBar.isHidden = true
             })
         }
         if scrollView.contentOffset.y <= -20 {
-            UIView.animateWithDuration(0.5, animations: {
-                weakSelf?.navigationController?.navigationBar.hidden = false
+            UIView.animate(withDuration: 0.5, animations: {
+                weakSelf?.navigationController?.navigationBar.isHidden = false
             })
         }
         

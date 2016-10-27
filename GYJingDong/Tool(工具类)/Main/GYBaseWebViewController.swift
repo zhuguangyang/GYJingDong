@@ -22,9 +22,9 @@ class GYBaseWebViewController: UIViewController {
      
      - parameter urlStr: url
      */
-    func loadWebView(urlStr: String) {
-        let url = NSURL(string: urlStr)
-        let request = NSURLRequest(URL: url!)
+    func loadWebView(_ urlStr: String) {
+        let url = URL(string: urlStr)
+        let request = URLRequest(url: url!)
         let webView = UIWebView(frame: view.bounds)
         view.addSubview(webView)
         webView.loadRequest(request)

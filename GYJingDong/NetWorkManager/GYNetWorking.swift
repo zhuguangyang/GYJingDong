@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import Alamofire
 import SwiftyJSON
+import Alamofire
 
 class GYNetWorking: NSObject {
     
@@ -19,7 +19,7 @@ class GYNetWorking: NSObject {
     }
     
     /**获取单利*/
-    static var defaultManager = GYNetWorking(NetWorkParmas: NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("NetWorkPlist", ofType: "plist")!)!)
+    static var defaultManager = GYNetWorking(NetWorkParmas: NSDictionary(contentsOfFile: Bundle.main.path(forResource: "NetWorkPlist", ofType: "plist")!)!)
     
     /**
      GET请求
@@ -29,18 +29,20 @@ class GYNetWorking: NSObject {
      - parameter sucess:  成功回调
      - parameter failure: 失败回调
      */
-    func GET(pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
+    func GET(_ pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
         let url = webRoot + path[pathKey]!
         print("url" + "\(url)")
-        Alamofire.request(.GET, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (let obj) in
-            switch obj.result {
-            case .Success(let value):
-                //                print(value)
-                sucess?(value)
-            case .Failure(let error):
-                failure?(error)
-            }
-        }
+//        Alamofire.request(.GET, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (obj) in
+//            switch obj.result {
+//            case .Success(let value):
+//                //                print(value)
+//                sucess?(value)
+//            case .Failure(let error):
+//                failure?(error)
+//            }
+//        }
+        
+        
     }
     
     /**
@@ -51,19 +53,19 @@ class GYNetWorking: NSObject {
      - parameter sucess:  成功回调
      - parameter failure: 失败回调
      */
-    func POST(pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
+    func POST(_ pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
         let url = webRoot + path[pathKey]!
-        Alamofire.request(.POST, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (let obj) in
-            switch obj.result {
-            case .Success(let value):
-                sucess?(value)
-            case .Failure(let error):
-                failure?(error)
-            }
-        }
+//        Alamofire.request(.POST, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (obj) in
+//            switch obj.result {
+//            case .Success(let value):
+//                sucess?(value)
+//            case .Failure(let error):
+//                failure?(error)
+//            }
+//        }
     }
     
-    private let NetWorkParmas: NSDictionary
+    fileprivate let NetWorkParmas: NSDictionary
     
     /// 接口前缀
     var webRoot: String {

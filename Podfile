@@ -1,13 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "9.0"
+use_frameworks!
 target 'GYJingDong' do
-    platform :ios, "8.0"
-    use_frameworks!
-    pod "Alamofire"
-    pod "SDWebImage"
-    pod "SnapKit"
-    pod "SwiftyJSON"
-    pod "MJRefresh"
-    pod "SQLite.swift", '~> 0.10.1'
-    pod 'Reachability', '~> 3.2'
+
+    pod 'SDWebImage'
+    pod 'SnapKit','~>3.0.2'
+    pod 'SwiftyJSON','~>3.1.0'
+    pod 'MJRefresh'
+    pod 'SQLite.swift', '~> 0.11.0'
+    pod 'Reachability'
     pod 'JDStatusBarNotification'
     
+    pod 'Alamofire','~> 4.0'
 end

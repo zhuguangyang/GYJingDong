@@ -23,9 +23,9 @@ class GYBaseViewController: UIViewController {
      - parameter target: 响应者
      - parameter action: 响应事件
      */
-    func creatLeftBarBtn(title: String?, target: AnyObject?, action: Selector) {
+    func creatLeftBarBtn(_ title: String?, target: AnyObject?, action: Selector) {
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: target, action: action)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.plain, target: target, action: action)
     }
     
     /**
@@ -35,9 +35,9 @@ class GYBaseViewController: UIViewController {
      - parameter target: 响应者
      - parameter action: 响应事件
      */
-    func creatRightBarBtn(title: String?, target: AnyObject?, action: Selector) {
+    func creatRightBarBtn(_ title: String?, target: AnyObject?, action: Selector) {
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: target, action: action)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.plain, target: target, action: action)
     }
     
     /**
@@ -47,18 +47,18 @@ class GYBaseViewController: UIViewController {
      - parameter target: 响应者
      - parameter action: 响应事件
      */
-    func creatRightBarBtn(title: String?,imageName: String?, target: AnyObject?, action: Selector) {
+    func creatRightBarBtn(_ title: String?,imageName: String?, target: AnyObject?, action: Selector) {
         
         let btn = UIButton()
         if title != "" {
-            btn.setTitle(title, forState: UIControlState.Normal)
-            btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            btn.setTitle(title, for: UIControlState())
+            btn.setTitleColor(UIColor.white, for: UIControlState())
         }
         if imageName != "" {
-            btn.setImage(UIImage(named: imageName!), forState: UIControlState.Normal)
+            btn.setImage(UIImage(named: imageName!), for: UIControlState())
         }
         
-        btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
         btn.sizeToFit()
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
     }
@@ -70,17 +70,17 @@ class GYBaseViewController: UIViewController {
      - parameter target: 响应者
      - parameter action: 响应事件
      */
-    func creatLeftBarBtn(title: String?,imageName: String?, target: AnyObject?, action: Selector) {
+    func creatLeftBarBtn(_ title: String?,imageName: String?, target: AnyObject?, action: Selector) {
         
         let btn = UIButton()
         if imageName != "" {
-            btn.setImage(removeRendering(imageName!), forState: UIControlState.Normal)
+            btn.setImage(removeRendering(imageName!), for: UIControlState())
         }
         if title != "" {
-            btn.setTitle(title, forState: UIControlState.Normal)
-            btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            btn.setTitle(title, for: UIControlState())
+            btn.setTitleColor(UIColor.white, for: UIControlState())
         }
-        btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
         btn.sizeToFit()
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
     }
@@ -89,10 +89,10 @@ class GYBaseViewController: UIViewController {
      获取取消渲染的image
      - parameter imageName: 图片名称
      */
-    func removeRendering(imageName:String) -> UIImage {
+    func removeRendering(_ imageName:String) -> UIImage {
         let image = UIImage(named: imageName)
         
-        return (image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal))!
+        return (image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal))!
     }
     
   

@@ -32,7 +32,7 @@ class GoodThingVC: GYBaseViewController {
                 
             }
             
-            SDWebImageManager.sharedManager().downloadImageWithURL(NSURL(string: (weakSelf?.imageArr[0].imageNamed)!), options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (_, error, _, _, _) in
+            SDWebImageManager.shared().downloadImage(with: URL(string: (weakSelf?.imageArr[0].imageNamed)!), options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (_, error, _, _, _) in
                 LogOverride.printLog(error)
                 weakSelf?.tableView?.reloadData()
             })
@@ -42,8 +42,8 @@ class GoodThingVC: GYBaseViewController {
         
     }
     
-    private func instanceUI() {
-        tableView = UITableView(frame: view.bounds, style: UITableViewStyle.Grouped)
+    fileprivate func instanceUI() {
+        tableView = UITableView(frame: view.bounds, style: UITableViewStyle.grouped)
         
         tableView?.delegate = self
         tableView?.dataSource = self
@@ -56,25 +56,25 @@ class GoodThingVC: GYBaseViewController {
 
 extension GoodThingVC: UITableViewDelegate,UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = UIColor.redColor()
+        cell.backgroundColor = UIColor.red
         return UITableViewCell()
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if imageArr.count > 0 {
             let  model = imageArr[0]
-            let key = NSURL(string: model.imageNamed)?.absoluteString
+            let key = URL(string: model.imageNamed)?.absoluteString
             LogOverride.printLog(key)
-            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key)
+            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: key)
             LogOverride.printLog(image)
-            let height = ( image.size.height / image.size.width ) * SCREEN_WIDTH
-            LogOverride.printLog(image.size)
+            let height = ( (image?.size.height)! / (image?.size.width)! ) * SCREEN_WIDTH
+            LogOverride.printLog(image?.size)
             return height
         }
         return 0

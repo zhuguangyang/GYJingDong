@@ -23,10 +23,10 @@ class GYBanner: UIView {
     var _titleLbl:UILabel = UILabel()      //标题
     var _models:Array<GYBannerModel> = []   //装载轮播模型
     var _currIndex:Int = 0
-    var _timer:NSTimer = NSTimer()
+    var _timer:Timer = Timer()
     var _size:CGSize = CGSize()
     
-    var _imageHandle:(index:Int) -> () = { (index) -> () in
+    var _imageHandle:(_ index:Int) -> () = { (index) -> () in
         
         
     }//记录手势点击的图片的下表
@@ -40,7 +40,7 @@ class GYBanner: UIView {
      
      - returns: UIView
      */
-    func initWithFrame(frame:CGRect, imageHandle:(index:Int) -> ()) -> GYBanner{
+    func initWithFrame(_ frame:CGRect, imageHandle:@escaping (_ index:Int) -> ()) -> GYBanner{
         
         let viewBgd:GYBanner = GYBanner(frame: frame)
         //记录
@@ -51,7 +51,7 @@ class GYBanner: UIView {
         //实例化sv
         _sv = UIScrollView(frame: CGRect(x: 0, y: 0, width: _size.width, height: _size.height))
         
-        _sv.pagingEnabled = true
+        _sv.isPagingEnabled = true
         _sv.bounces = true
         
         _sv.showsHorizontalScrollIndicator = false
@@ -77,8 +77,8 @@ class GYBanner: UIView {
         //        viewBgd.addSubview(_titleLbl)
         
         //实例化PageControl
-        _pgCtrl = UIPageControl(frame: CGRect(x: CGRectGetMaxX(_sv.frame) - 100, y: _size.height - 30, width: 80, height: 30))
-        _pgCtrl.enabled = false
+        _pgCtrl = UIPageControl(frame: CGRect(x: _sv.frame.maxX - 100, y: _size.height - 30, width: 80, height: 30))
+        _pgCtrl.isEnabled = false
         
         viewBgd.addSubview(_pgCtrl)
         
@@ -91,7 +91,7 @@ class GYBanner: UIView {
      
      - parameter models: 轮播所需数据模型的数组
      */
-    func reloadGYBanner(models:Array<GYBannerModel>){
+    func reloadGYBanner(_ models:Array<GYBannerModel>){
         if models.count == 0 {
             return;
         }
@@ -117,7 +117,7 @@ class GYBanner: UIView {
      */
     func tapHandle(){
         
-        _imageHandle(index: _currIndex)
+        _imageHandle(_currIndex)
     }
     
     /**
@@ -127,7 +127,7 @@ class GYBanner: UIView {
         
         _timer.invalidate()
         
-        _timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: #selector(GYBanner.autoScroll), userInfo: nil, repeats: true)
+        _timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(GYBanner.autoScroll), userInfo: nil, repeats: true)
         
     }
     
@@ -136,7 +136,7 @@ class GYBanner: UIView {
     /**
      实例化三张图片
      */
-    private func instanceImageView(){
+    fileprivate func instanceImageView(){
         
         for i in 0...3{
             let tmpV = _sv.viewWithTag(6666 + i) as UIView!
@@ -152,7 +152,7 @@ class GYBanner: UIView {
         for i in 0..<3 {
             
             let imageV = UIImageView(frame: CGRect(x: _size.width * CGFloat(i), y: 0, width: _size.width, height: _size.height))
-            imageV.contentMode = UIViewContentMode.ScaleToFill
+            imageV.contentMode = UIViewContentMode.scaleToFill
             imageV.tag = 6666 + i
             //            imageV.contentMode = UIViewContentMode.ScaleAspectFill
             imageV.clipsToBounds = true
@@ -162,20 +162,20 @@ class GYBanner: UIView {
             if i == 0 {
                 var model = GYBannerModel()
                 model = _models.last!
-                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
+                imageV.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
                 _leftView = imageV
             } else if i == 1 {
                 
                 //中间图片  (第一张)
                 var model = GYBannerModel()
                 model = _models.first!
-                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
+                imageV.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
                 _centerView = imageV
             } else {
                 //右边的图片 (第二张)
                 var model = GYBannerModel()
                 model = _models[0]
-                imageV.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
+                imageV.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
                 _rightView = imageV
             }
             
@@ -202,7 +202,7 @@ class GYBanner: UIView {
     /**
      重新设置图片
      */
-    private func reloadImageView(){
+    fileprivate func reloadImageView(){
         
         //X的偏移量
         let offsetX:CGFloat = _sv.contentOffset.x
@@ -224,13 +224,13 @@ class GYBanner: UIView {
         //重新设置图片
         var model = GYBannerModel()
         model = _models[leftIndex]
-        _leftView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
+        _leftView.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
         
         model = _models[_currIndex]
-        _centerView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
+        _centerView.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
         
         model = _models[rightIndex]
-        _rightView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
+        _rightView.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "banner_bg"))
     }
     
     func positionView(){
@@ -248,17 +248,17 @@ class GYBanner: UIView {
 
 extension GYBanner:UIScrollViewDelegate {
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         positionView()
         startTimer()
     }
     
     //当设置setContentOffset且为True时调用，手动拖动不会调用
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         positionView()
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         //        _timer.invalidate() 
     }
     

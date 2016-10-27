@@ -22,8 +22,8 @@ class OAuthVCViewController: UIViewController ,UIWebViewDelegate{
         super.viewDidLoad()
         
         let urlStr =  "https://oauth.jd.com/oauth/authorize?response_type=code&client_id=75A707E9376A80A0C3BD592A2DB3FDDB&redirect_uri=urn:ietf:wg:oauth:2.0:oob"
-        let url = NSURL(string: urlStr)
-        let request = NSURLRequest(URL: url!)
+        let url = URL(string: urlStr)
+        let request = URLRequest(url: url!)
         
         webView.loadRequest(request)
         print("GY")
@@ -31,7 +31,7 @@ class OAuthVCViewController: UIViewController ,UIWebViewDelegate{
     }
     
     //MARK: - 懒加载
-    private lazy var webView: UIWebView = {
+    fileprivate lazy var webView: UIWebView = {
         let wv = UIWebView()
         wv.delegate = self
         

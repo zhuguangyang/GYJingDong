@@ -14,6 +14,9 @@
 		B705ED371D1282860044DE64 /* GYBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED361D1282860044DE64 /* GYBannerModel.swift */; };
 		B705ED391D12A7A30044DE64 /* FoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705ED381D12A7A30044DE64 /* FoundCell.swift */; };
 		B705ED3B1D12A7CD0044DE64 /* FoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */; };
+		B73A09E71DC1918500ADD1F1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73A09E61DC1918500ADD1F1 /* Alamofire.framework */; };
+		B73A09E91DC1918F00ADD1F1 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73A09E81DC1918F00ADD1F1 /* SnapKit.framework */; };
+		B73A09EB1DC1919400ADD1F1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73A09EA1DC1919400ADD1F1 /* SwiftyJSON.framework */; };
 		B75FCF651D112AAD0039F935 /* OAuthVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */; };
 		B75FCF671D1130010039F935 /* GlobaVivale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF661D1130010039F935 /* GlobaVivale.swift */; };
 		B75FCF691D1130710039F935 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75FCF681D1130710039F935 /* UserAccount.swift */; };
@@ -63,6 +66,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B73A09E51DC1917A00ADD1F1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		194D8111872785ABACE021BD /* Pods-GYJingDong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.release.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.release.xcconfig"; sourceTree = "<group>"; };
 		579F8B092A3E1C6F42FA7895 /* Pods-GYJingDong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GYJingDong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GYJingDong/Pods-GYJingDong.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +89,9 @@
 		B705ED361D1282860044DE64 /* GYBannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYBannerModel.swift; sourceTree = "<group>"; };
 		B705ED381D12A7A30044DE64 /* FoundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundCell.swift; sourceTree = "<group>"; };
 		B705ED3A1D12A7CD0044DE64 /* FoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundCell.xib; sourceTree = "<group>"; };
+		B73A09E61DC1918500ADD1F1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GYJingDong-fjpyafqvmpumwmaejheeseomcztg/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		B73A09E81DC1918F00ADD1F1 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GYJingDong-fjpyafqvmpumwmaejheeseomcztg/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
+		B73A09EA1DC1919400ADD1F1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/GYJingDong-fjpyafqvmpumwmaejheeseomcztg/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		B75FCF641D112AAD0039F935 /* OAuthVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthVCViewController.swift; sourceTree = "<group>"; };
 		B75FCF661D1130010039F935 /* GlobaVivale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobaVivale.swift; sourceTree = "<group>"; };
 		B75FCF681D1130710039F935 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
@@ -118,6 +137,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B73A09EB1DC1919400ADD1F1 /* SwiftyJSON.framework in Frameworks */,
+				B73A09E91DC1918F00ADD1F1 /* SnapKit.framework in Frameworks */,
+				B73A09E71DC1918500ADD1F1 /* Alamofire.framework in Frameworks */,
 				B79153951D33B5DD008D4E6A /* SystemConfiguration.framework in Frameworks */,
 				B76BE0FA1D19092000A4B6E9 /* SQLite.framework in Frameworks */,
 				42F8547A2EC9C8CFD42AAE78 /* Pods_GYJingDong.framework in Frameworks */,
@@ -144,6 +166,9 @@
 		4091FE06FD13AB8285204070 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B73A09EA1DC1919400ADD1F1 /* SwiftyJSON.framework */,
+				B73A09E81DC1918F00ADD1F1 /* SnapKit.framework */,
+				B73A09E61DC1918500ADD1F1 /* Alamofire.framework */,
 				B79153941D33B5DD008D4E6A /* SystemConfiguration.framework */,
 				B76BE0F91D19092000A4B6E9 /* SQLite.framework */,
 				B76BE0F71D1907C200A4B6E9 /* libsqlite3.0.tbd */,
@@ -391,6 +416,7 @@
 				B796D9B01D0FA81B00F0A2ED /* Resources */,
 				B09367199DD679AB337F03DC /* [CP] Embed Pods Frameworks */,
 				1562BF450F35719E3B081F08 /* [CP] Copy Pods Resources */,
+				B73A09E51DC1917A00ADD1F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -450,13 +476,16 @@
 					B796D9B11D0FA81B00F0A2ED = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = UZZG6NM74T;
+						LastSwiftMigration = 0800;
 					};
 					B796D9C51D0FA81B00F0A2ED = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = B796D9B11D0FA81B00F0A2ED;
 					};
 					B796D9D01D0FA81B00F0A2ED = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = B796D9B11D0FA81B00F0A2ED;
 					};
 				};
@@ -736,12 +765,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GYJingDong/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GYJingDong/OAuth(授权)/GYJingDong-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -754,11 +784,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = GYJingDong/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GYJingDong/OAuth(授权)/GYJingDong-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -770,6 +801,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GYJingDong.app/GYJingDong";
 			};
 			name = Debug;
@@ -782,6 +814,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GYJingDong.app/GYJingDong";
 			};
 			name = Release;
@@ -793,6 +826,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDongUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GYJingDong;
 			};
 			name = Debug;
@@ -804,6 +838,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zgy.GYJingDongUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GYJingDong;
 			};
 			name = Release;

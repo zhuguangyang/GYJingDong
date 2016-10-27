@@ -62,7 +62,7 @@ class GYSQLite: NSObject {
      
      - parameter named: 特定条件
      */
-    func findSpecialDB(named: String) {
+    func findSpecialDB(_ named: String) {
         //        let stmt = try! db.prepare()
         // 设置条件
         let alice = users.filter(name == named)
@@ -76,7 +76,7 @@ class GYSQLite: NSObject {
      - parameter emaile:字段
      - parameter named:字段
      */
-    func insertDB(emaile: String,named: String) {
+    func insertDB(_ emaile: String,named: String) {
         do {
             let rowID = try db.run(users.insert(email <- emaile,name <- named))
             LogOverride.printLog(rowID)
@@ -100,7 +100,7 @@ class GYSQLite: NSObject {
     /**
      删除特定数据
      */
-    func deleteSpecificDB(named: String) {
+    func deleteSpecificDB(_ named: String) {
         do {
             //更新全部
             //            try db.run(users.update(name <- "DWYDA"))
@@ -116,7 +116,7 @@ class GYSQLite: NSObject {
      更新特定条件的数据
      - parameter named: 需要查找的名字
      */
-    func updateSpecialDB(named: String) {
+    func updateSpecialDB(_ named: String) {
         let alice = users.filter(name == named)
         do {
             let user =  try db.run(alice.update(email <- "zhu@163.com"))
@@ -138,8 +138,8 @@ class GYSQLite: NSObject {
     }
     
     /// 创建数据库操作柄
-    private lazy var db: Connection = {
-        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+    fileprivate lazy var db: Connection = {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         LogOverride.printLog(path)
         /**
          *  如果路径不存在就创建
@@ -164,13 +164,13 @@ class GYSQLite: NSObject {
     }
     
     /// 创建表
-    private lazy var users: Table = {
+    fileprivate lazy var users: Table = {
         let users = Table("users")
         return users
     }()
     
     /// 创建另一张表
-    private lazy var JadeUser: Table = {
+    fileprivate lazy var JadeUser: Table = {
         let giant = Table("JadeUser")
         return giant
         

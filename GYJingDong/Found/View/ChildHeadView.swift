@@ -18,13 +18,13 @@ class ChildHeadView: UICollectionView {
         }
     }
     
-    private var btnLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    fileprivate var btnLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
     init(){
-        super.init(frame: CGRectZero, collectionViewLayout: btnLayout)
+        super.init(frame: CGRect.zero, collectionViewLayout: btnLayout)
         
         //1.注册cell
-        registerClass(ChileHeadViewCell.self, forCellWithReuseIdentifier: "ChileHeadViewCell")
+        register(ChileHeadViewCell.self, forCellWithReuseIdentifier: "ChileHeadViewCell")
         //2.设置数据源
         dataSource = self
         delegate = self
@@ -32,8 +32,8 @@ class ChildHeadView: UICollectionView {
         //2.设置cell之间的间隙
         btnLayout.minimumInteritemSpacing = 1
         btnLayout.minimumLineSpacing = 1
-        btnLayout.itemSize = CGSizeMake((SCREEN_WIDTH - 3) / 4, (SCREEN_WIDTH - 3)/4)
-        backgroundColor = UIColor.whiteColor()
+        btnLayout.itemSize = CGSize(width: (SCREEN_WIDTH - 3) / 4, height: (SCREEN_WIDTH - 3)/4)
+        backgroundColor = UIColor.white
         
     }
     
@@ -41,7 +41,7 @@ class ChildHeadView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private class ChileHeadViewCell: UICollectionViewCell {
+    fileprivate class ChileHeadViewCell: UICollectionViewCell {
         
         override init(frame:CGRect) {
             super.init(frame: frame)
@@ -51,12 +51,12 @@ class ChildHeadView: UICollectionView {
         }
         
         
-        private func setupUI() {
+        fileprivate func setupUI() {
             
             //1.添加子控件
             contentView.addSubview(iconImageView)
             contentView.addSubview(iconLabel)
-            iconLabel.textAlignment = .Center
+            iconLabel.textAlignment = .center
             //            iconLabel.font = UIFont.systemFontOfSize(15)
             //            iconLabel.sizeToFit()
             iconLabel.adjustsFontSizeToFitWidth = true
@@ -78,10 +78,10 @@ class ChildHeadView: UICollectionView {
         
         //MARK: - 懒加载
         /// 懒加载 图片
-        private lazy var iconImageView:UIImageView = UIImageView()
+        fileprivate lazy var iconImageView:UIImageView = UIImageView()
         
         /// 图片标题
-        private lazy var iconLabel: UILabel = UILabel()
+        fileprivate lazy var iconLabel: UILabel = UILabel()
         
         //        private lazy var btn: UIButton = {
         //            let btn = UIButton()
@@ -99,15 +99,15 @@ class ChildHeadView: UICollectionView {
 
 extension ChildHeadView: UICollectionViewDataSource,UICollectionViewDelegate {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return modelArr.count ?? 0
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ChileHeadViewCell", forIndexPath: indexPath) as! ChileHeadViewCell
-        let model = modelArr[indexPath.row]
-        cell.iconImageView.sd_setImageWithURL(NSURL(string: model.imageNamed), placeholderImage: UIImage(named: "default_faxian_bannerButton"))
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChileHeadViewCell", for: indexPath) as! ChileHeadViewCell
+        let model = modelArr[(indexPath as NSIndexPath).row]
+        cell.iconImageView.sd_setImage(with: URL(string: model.imageNamed), placeholderImage: UIImage(named: "default_faxian_bannerButton"))
         cell.iconLabel.text = model.labelText
         return cell
         
