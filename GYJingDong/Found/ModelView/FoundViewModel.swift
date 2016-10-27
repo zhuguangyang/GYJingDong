@@ -27,34 +27,34 @@ class FoundViewModel: ViewModelClass {
         productArray.removeAll()
         GYNetWorking.defaultManager?.GET("V2Banner", paramas: ["f":"iphone","type":"faxian","v":"6.3.2","weixin":1], sucess: { (obj) in
             
-//            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
-//            for item in bannerA!{
-//                let model = GYBannerModel()
-//                model.imageNamed = item["img"]! as? String ?? ""
-//                weakSelf?.bannerArray.append(model)
-//            }
-//            bannerBlock((weakSelf?.bannerArray)!)
-//            for item in  (obj["data"]!!["little_banner"]! as? [[String:AnyObject]])!{
-//                let model = GYBannerModel()
-//                model.imageNamed = item["img"]! as? String ?? ""
-//                model.labelText = (item["title"] ?? "") as! String
-//                weakSelf?.btnArray.append(model)
-//            }
-//            btnBlock((weakSelf?.btnArray)!)
+            let bannerA = (obj as! [String: AnyObject])["data"]!["rows"]! as? [[String:AnyObject]]
+            for item in bannerA!{
+                let model = GYBannerModel()
+                model.imageNamed = item["img"]! as? String ?? ""
+                weakSelf?.bannerArray.append(model)
+            }
+            bannerBlock((weakSelf?.bannerArray)!)
+            for item in  ((obj as! [String: AnyObject])["data"]!["little_banner"]! as? [[String:AnyObject]])!{
+                let model = GYBannerModel()
+                model.imageNamed = item["img"]! as? String ?? ""
+                model.labelText = item["title"] == nil ? "" : (item["title"] as! String)
+                weakSelf?.btnArray.append(model)
+            }
+            btnBlock((weakSelf?.btnArray)!)
             }, failure: { (error) in
                 print(error)
         })
         //http://api.smzdm.com/v1/faxian/articles?f=iphone&imgmode=0&limit=20&offset=0&page=1&v=6.3.2&weixin=1
         GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":0,"page":1], sucess: { (obj) in
             print(obj)
-//            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
-//            for item in bannerA!{
-//                let model = GYBannerModel()
-//                model.imageNamed = item["article_pic"]! as? String ?? ""
-//                model.link = item["article_url"]! as? String ?? ""
-//                weakSelf?.productArray.append(model)
-//            }
-//            productBlock((weakSelf?.productArray)!)
+            let bannerA = (obj as! [String: AnyObject])["data"]!["rows"]! as? [[String:AnyObject]]
+            for item in bannerA!{
+                let model = GYBannerModel()
+                model.imageNamed = item["article_pic"]! as? String ?? ""
+                model.link = item["article_url"]! as? String ?? ""
+                weakSelf?.productArray.append(model)
+            }
+            productBlock((weakSelf?.productArray)!)
             }, failure: { (error) in
                 print(error)
         })
@@ -64,14 +64,14 @@ class FoundViewModel: ViewModelClass {
     func getFootDatas(_ offsetCount: Int,pageCount: Int,productBlock:@escaping ((_ productArr1: [GYBannerModel]) -> Void)) {
         weak var weakSelf = self
         GYNetWorking.defaultManager?.GET("FaXian", paramas: ["f":"iphone","imgmode":"0","v":"6.3.2","weixin":1,"limit":20,"offset":offsetCount,"page":pageCount], sucess: { (obj) in
-//            let bannerA = obj["data"]!!["rows"]! as? [[String:AnyObject]]
-//            for item in bannerA!{
-//                let model = GYBannerModel()
-//                model.imageNamed = item["article_pic"]! as? String ?? ""
-//                model.link = item["article_url"]! as? String ?? ""
-//                weakSelf?.productArray.append(model)
-//            }
-//            productBlock((weakSelf?.productArray)!)
+            let bannerA = (obj as! [String: AnyObject])["data"]!["rows"]! as? [[String:AnyObject]]
+            for item in bannerA!{
+                let model = GYBannerModel()
+                model.imageNamed = item["article_pic"]! as? String ?? ""
+                model.link = item["article_url"]! as? String ?? ""
+                weakSelf?.productArray.append(model)
+            }
+            productBlock((weakSelf?.productArray)!)
             }, failure: { (error) in
                 print(error)
         })

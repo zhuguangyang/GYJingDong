@@ -13,7 +13,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        request("https://api.500px.com/v1/photos").responseJSON { (data) in
+            print(data.data)
+        }
         
+      
     }
     
     override func didReceiveMemoryWarning() {

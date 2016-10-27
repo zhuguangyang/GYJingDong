@@ -32,6 +32,7 @@ class GYNetWorking: NSObject {
     func GET(_ pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
         let url = webRoot + path[pathKey]!
         print("url" + "\(url)")
+        //3.0 swift 2.3
 //        Alamofire.request(.GET, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (obj) in
 //            switch obj.result {
 //            case .Success(let value):
@@ -41,7 +42,16 @@ class GYNetWorking: NSObject {
 //                failure?(error)
 //            }
 //        }
-        
+        //4.0 swift3
+        request(url, method: .get, parameters: paramas as! Parameters?, encoding: JSONEncoding.default, headers: nil).responseJSON { (data) in
+            switch data.result {
+            case .success(let value):
+                
+                sucess?(value as AnyObject)
+            case .failure(let error):
+                failure?(error as NSError)
+            }
+        }
         
     }
     
@@ -55,6 +65,7 @@ class GYNetWorking: NSObject {
      */
     func POST(_ pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
         let url = webRoot + path[pathKey]!
+        //3.0 swift 2.3
 //        Alamofire.request(.POST, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (obj) in
 //            switch obj.result {
 //            case .Success(let value):
@@ -63,6 +74,16 @@ class GYNetWorking: NSObject {
 //                failure?(error)
 //            }
 //        }
+        //4.0 swift3
+        request(url, method: .post, parameters: paramas as! Parameters?, encoding: JSONEncoding.default, headers: nil).responseJSON { (data) in
+            switch data.result {
+            case .success(let value):
+                
+                sucess?(value as AnyObject)
+            case .failure(let error):
+                failure?(error as NSError)
+            }
+        }
     }
     
     fileprivate let NetWorkParmas: NSDictionary
