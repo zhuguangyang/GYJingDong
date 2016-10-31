@@ -31,7 +31,7 @@ class GYNetWorking: NSObject {
      */
     func GET(_ pathKey: String,paramas: NSDictionary?,sucess:((AnyObject) -> Void)?,failure:((NSError) -> Void)?) {
         let url = webRoot + path[pathKey]!
-        print("url" + "\(url)")
+        print("url" + "\(url)")   
         //3.0 swift 2.3
 //        Alamofire.request(.GET, url, parameters: paramas as? [String : AnyObject], encoding: .URL, headers: nil).responseJSON { (obj) in
 //            switch obj.result {
@@ -52,6 +52,7 @@ class GYNetWorking: NSObject {
                 failure?(error as NSError)
             }
         }
+     
         
     }
     
