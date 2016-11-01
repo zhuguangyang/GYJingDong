@@ -52,7 +52,13 @@ class GYNetWorking: NSObject {
                 failure?(error as NSError)
             }
         }
-     
+        
+   /*     request(url, method: .post, parameters: paramas as? Parameters, encoding: JSONEncoding.default, headers: nil).downloadProgress(queue: DispatchQueue.main.sync(execute: { () -> T in
+            
+        })) { (progress) in
+            
+        }
+     */
         
     }
     
