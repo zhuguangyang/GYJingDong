@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.4.0)
   - JDStatusBarNotification (1.5.3)
   - MJRefresh (3.1.10)
   - Reachability (3.2)
@@ -13,7 +13,7 @@ PODS:
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire (~> 4.4)
   - JDStatusBarNotification
   - MJRefresh
   - Reachability
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 3.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -32,6 +32,6 @@ SPEC CHECKSUMS:
   SQLite.swift: 9a26273607d3077a2e5a8d33486e9989f8404c7d
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 01e393e24ed096df4f3fa33acb4cac3c2143818b
+PODFILE CHECKSUM: 7db7f0c20e7c10713848c5d84665f57072330d8a
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.2.0

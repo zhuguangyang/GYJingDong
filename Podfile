@@ -11,5 +11,6 @@ target 'GYJingDong' do
     pod 'Reachability'
     pod 'JDStatusBarNotification'
     
-    pod 'Alamofire','~> 4.0'
+    #4.0
+    pod 'Alamofire','~> 4.4'
 end
