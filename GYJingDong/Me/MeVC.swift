@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MeVC: GYBaseViewController {
     
@@ -15,6 +16,13 @@ class MeVC: GYBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        Alamofire.download("http://dldir1.qq.com/qqfile/QQforMac/QQ_V4.2.4.dmg", to: nil)
+        .downloadProgress { (progress) in
+            print(progress)
+            print(progress.completedUnitCount)
+        }
 
     }
 }

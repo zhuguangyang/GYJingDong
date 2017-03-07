@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         // Allocate a reachability object
         
-        window?.rootViewController = GYTabBarViewController()
+//        window?.rootViewController = GYTabBarViewController()
+        window?.rootViewController = MeVC()
         
         return true
     }
